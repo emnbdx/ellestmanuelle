@@ -813,10 +813,6 @@ textarea:-moz-placeholder {
 .header-hp-1 .menu-desktop-inner .main-menu .menu-item.mega-menu.mega-menu-1 .sub-menu figure img {
   width: 72.1%;
 }
-.header-hp-1 .menu-desktop-inner .main-menu .menu-item:last-child .sub-menu {
-  right: 5px;
-  left: inherit;
-}
 .header-hp-1 .header-right {
   align-items: center;
   -moz-align-items: center;
