@@ -3488,15 +3488,15 @@ textarea:-moz-placeholder {
 }
 
 /* End Our Team Section */
-/* Testimonials Section */
-.testimonials-hp-1.testimonials-about-us {
+/* CV Section */
+.cv-about-us {
   background: #f7f7f7;
 }
-.testimonials-hp-1.testimonials-about-us ul {
+.cv-about-us ul {
   list-style: initial;
   padding-left: 30px;
 }
-.testimonials-hp-1.testimonials-about-us .testimonials-content {
+.cv-about-us .testimonials-content {
   background: transparent;
 }
 
@@ -5812,6 +5812,10 @@ textarea:-moz-placeholder {
 }
 .blog-masonry-section .blog-content .load-more .btn-small {
   padding: 17px 34.5px;
+}
+.blog-masonry-section ul {
+  list-style: initial;
+  padding-left: 30px;
 }
 
 /* End Blog Section */

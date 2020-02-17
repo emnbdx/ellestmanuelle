@@ -27,165 +27,8 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="about-us">
-	<header class="header">
-		<!-- Show Desktop Header -->
-		<div class="show-desktop-header header-hp-1 style-header-hp-1">
-			<div id="js-navbar-fixed" class="menu-desktop">
-				<div class="container-fluid">
-					<div class="menu-desktop-inner">
-						<!-- Logo -->
-						<div class="logo">
-							<p class="title">ellestmanuelle.fr</p>
-							<p class="subtitle">vous l’êtes aussi</p>
-						</div>
-						<!-- Main Menu -->
-						<nav class="main-menu">
-							<ul>
-								<li class="menu-item">
-									<a href="index.html">
-									Accueil
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="#">
-									Prestations / intervention
-									</a>
-									<ul class="sub-menu">
-										<li>
-											<a href="ateliers.html">
-												Animation d'ateliers
-												<i class="zmdi zmdi-chevron-right"></i>
-											</a>
-											<ul class="sub-menu menu-levels">
-												<li><a href="ateliers.html#philosophie">Ma philosophie d’animation/ma plus value</a></li>
-												<li><a href="ateliers.html#prestations">Types de prestations</a></li>
-												<li><a href="ateliers.html#tarifs">Tarifs</a></li>
-												<li><a href="ateliers.html#catalogue">Catalogue</a></li>
-												<li><a href="ateliers.html#reference">Ils m’ont fait confiance</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="illustrations.html">
-												Réalisation d'illustrations
-												<i class="zmdi zmdi-chevron-right"></i>
-											</a>
-											<ul class="sub-menu menu-levels">
-												<li><a href="illustrations.html#albums">Albums jeunesse</a></li>
-												<li><a href="illustrations.html#outils">Outils pédagogiques</a></li>
-												<li><a href="illustrations.html#graphisme">Graphisme</a></li>
-												<li><a href="illustrations.html#taifs">Tarifs</a></li>
-												<li><a href="illustrations.html#reference">Ils m’ont fait confiance</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li class="menu-item">
-									<a href="creations-personnelles.html">
-									Créations personnelles
-									</a>
-								</li>
-								<li class="menu-item mega-menu">
-									<a href="qui-suis-je.html" class="current">
-									Qui suis-je ?
-									</a>
-									<ul class="sub-menu">
-										<li><a href="qui-suis-je.html#histoire">Mon histoire</a></li>
-										<li><a href="qui-suis-je.html#cv">Mon CV</a></li>
-										<li><a href="contact.html">Contact</a></li>
-									</ul>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Show Mobile Header -->
-		<div  id="js-navbar-mb-fixed" class="show-mobile-header">
-			<!-- Logo And Hamburger Button -->
-			<div class="mobile-top-header">
-				<div class="logo-mobile">
-					<p class="title">ellestmanuelle.fr</p>
-					<p class="subtitle">vous l’êtes aussi</p>
-				</div>
-				<button class="hamburger hamburger--spin hidden-tablet-landscape-up" id="toggle-icon">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-			</div>
-			<!-- Au Navbar Menu -->
-			<div class="au-navbar-mobile navbar-mobile-1">
-				<div class="au-navbar-menu">
-					<ul>
-						<li class="drop">
-							<a class="drop-link" href="index.html">
-								Accueil
-							</a>
-						</li>
-						<li class="drop">							
-							<a class="drop-link" href="#">
-								Prestations / intervention
-								<span class="arrow">
-									<i class="zmdi zmdi-chevron-down"></i>
-								</span>
-							</a>							
-							<ul class="drop-menu bottom-right">
-								<li class="drop">
-									<a class="drop-link" href="#">
-									Animation d'ateliers
-									<span class="arrow">
-										<i class="zmdi zmdi-chevron-down"></i>
-									</span>
-									</a>
-									<ul class="drop-menu bottom-right">
-										<li><a class="drop-menu-inner" href="ateliers.html#philosophie">Ma philosophie d’animation/ma plus value</a></li>
-										<li><a class="drop-menu-inner" href="ateliers.html#prestations">Types de prestations</a></li>
-										<li><a class="drop-menu-inner" href="ateliers.html#tarifs">Tarifs</a></li>
-										<li><a class="drop-menu-inner" href="ateliers.html#catalogue">Catalogue</a></li>
-										<li><a class="drop-menu-inner" href="ateliers.html#reference">Ils m’ont fait confiance</a></li>
-									</ul>
-								</li>
-								<li class="drop">
-									<a class="drop-link" href="#">
-									Réalisation d'illustrations
-									<span class="arrow">
-										<i class="zmdi zmdi-chevron-down"></i>
-									</span>
-									</a>
-									<ul class="drop-menu bottom-right">
-										<li><a class="drop-menu-inner" href="illustrations.html#albums">Albums jeunesse</a></li>
-										<li><a class="drop-menu-inner" href="illustrations.html#outils">Outils pédagogiques</a></li>
-										<li><a class="drop-menu-inner" href="illustrations.html#graphisme">Graphisme</a></li>
-										<li><a class="drop-menu-inner" href="illustrations.html#taifs">Tarifs</a></li>
-										<li><a class="drop-menu-inner" href="illustrations.html#reference">Ils m’ont fait confiance</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="drop">
-							<a class="drop-link" href="creations-personnelles.html">
-								Créations personnelles
-							</a>
-						</li>
-						<li class="drop">
-							<a class="drop-link" href="#">
-								Qui suis-je ?
-								<span class="arrow">
-									<i class="zmdi zmdi-chevron-down"></i>
-								</span>
-							</a>
-							<ul class="drop-menu bottom-right">
-								<li><a href="qui-suis-je.html#histoire">Mon histoire</a></li>
-								<li><a href="qui-suis-je.html#cv">Mon CV</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>				
-			</div>
-		</div>
-	</header>
+
+	<?php require_once("includes/header.php"); ?>
 
 	<div class="page-content">
 		<!-- Breadcrumb Section -->
@@ -234,8 +77,8 @@
 		</section>
 		<!-- End Our Story Section -->
 
-		<!-- Testimonials Section --> 
-		<section class="testimonials-hp-1 testimonials-about-us">
+		<!-- CV Section --> 
+		<section class="cv-about-us">
 			<div id="cv" class="container section-box">
 				<div class="row">
 					<div class="col-12">
@@ -297,38 +140,10 @@
 				</div>
 			</div>	
 		</section>
-		<!-- End Testimonials Section -->
+		<!-- End CV Section -->
 	</div>
 
-	<footer class="footer-section section-box">
-		<div class="footer-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-						<div class="footer-items footer-items-1">
-							<h4>Contact</h4>
-							<!-- <div class="contact">
-								<i class="zmdi zmdi-map"></i>
-								<span>No 40 Baria Sreet 133/2</span>
-							</div> -->
-							<div class="contact">
-								<i class="zmdi zmdi-phone"></i>
-								<span><a href="tel:+33600000000">+ (33) 06 00 00 00 00</a></span>
-							</div>
-							<div class="contact">
-								<i class="zmdi zmdi-email"></i>
-								<span>contact@ellestmanuelle.fr</span>
-							</div>
-							<div class="contact">
-								<i class="zmdi zmdi-globe"></i>
-								<span>www.ellestmanuelle.fr</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php require_once("includes/footer.php"); ?>
 
 	<a href="#" id="back-to-top"></a>
 	<!--  JS  -->
