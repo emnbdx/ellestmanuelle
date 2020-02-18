@@ -28,7 +28,7 @@
 </head>
 <body class="homepages-1">
 
-	<?php include("includes/header.php"); ?>
+	<?php require_once("includes/header.php"); ?>
 	
 	<div class="page-content">
 		<!-- Categories Section -->

@@ -43,6 +43,7 @@
 <body class="standard-grid">
 
 	<?php require_once("includes/header.php"); ?>
+	<?php require_once("includes/dal.php"); ?>
 
 	<div class="page-content">
 		<!-- Breadcrumb Section -->

@@ -1,3 +1,5 @@
+<?php include("helpers.php"); ?>
+
 <header class="header">
 	<!-- Show Desktop Header -->
 	<div class="show-desktop-header header-hp-1 style-header-hp-1">
@@ -11,15 +13,7 @@
 					</div>
 					<!-- Main Menu -->
 					<nav class="main-menu">
-						<?php 						
-							function isCurrentPage($page)
-							{
-								$parts = explode("/", $_SERVER["REQUEST_URI"]);
-								$currentUri = end($parts);
-								if($currentUri === $page)
-									echo " class=\"current\"";
-							}
-						?>
+						
 						<ul>
 							<li class="menu-item">
 								<a href="index.php"<?php isCurrentPage("index.php")?>>
