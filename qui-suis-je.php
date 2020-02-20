@@ -28,7 +28,7 @@
 </head>
 <body class="about-us">
 
-	<?php require_once("includes/header.php"); ?>
+	<?php require_once("resources/views/header.php"); ?>
 
 	<div class="page-content">
 		<!-- Breadcrumb Section -->
@@ -143,7 +143,7 @@
 		<!-- End CV Section -->
 	</div>
 
-	<?php require_once("includes/footer.php"); ?>
+	<?php require_once("resources/views/footer.php"); ?>
 
 	<a href="#" id="back-to-top"></a>
 	<!--  JS  -->

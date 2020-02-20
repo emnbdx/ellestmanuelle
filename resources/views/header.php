@@ -1,4 +1,8 @@
-<?php include("helpers.php"); ?>
+<?php 
+	include("resources/controllers/HeaderController.php"); 
+
+	$controller = new HeaderController();
+?>
 
 <header class="header">
 	<!-- Show Desktop Header -->
@@ -16,12 +20,12 @@
 						
 						<ul>
 							<li class="menu-item">
-								<a href="index.php"<?php isCurrentPage("index.php")?>>
+								<a href="index.php"<?php $controller->addCurrentClass("index.php")?>>
 								Accueil
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="#"<?php isCurrentPage("ateliers.php"); isCurrentPage("illustrations.php");?>>
+								<a href="#"<?php $controller->addCurrentClass("ateliers.php"); $controller->addCurrentClass("illustrations.php");?>>
 								Prestations / intervention
 								</a>
 								<ul class="sub-menu">
@@ -54,12 +58,12 @@
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="creations-personnelles.php"<?php isCurrentPage("creations-personnelles.php")?>>
+								<a href="creations-personnelles.php"<?php $controller->addCurrentClass("creations-personnelles.php")?>>
 								Créations personnelles
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="qui-suis-je.php"<?php isCurrentPage("qui-suis-je.php")?>>
+								<a href="qui-suis-je.php"<?php $controller->addCurrentClass("qui-suis-je.php")?>>
 								Qui suis-je ?
 								</a>
 								<ul class="sub-menu">
@@ -68,7 +72,7 @@
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="contact.php"<?php isCurrentPage("contact.php")?>>
+								<a href="contact.php"<?php $controller->addCurrentClass("contact.php")?>>
 								Contact
 								</a>
 							</li>

@@ -2,7 +2,7 @@
 
 
 
-$string = file_get_contents("config.json");
+$string = file_get_contents("../config.json");
 
 $option = json_decode($string);
 

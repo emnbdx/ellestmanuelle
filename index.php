@@ -28,7 +28,7 @@
 </head>
 <body class="homepages-1">
 
-	<?php require_once("includes/header.php"); ?>
+	<?php require_once("resources/views/header.php"); ?>
 	
 	<div class="page-content">
 		<!-- Categories Section -->
@@ -39,7 +39,7 @@
 						<!-- Categories 1 -->
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 							<div class="categories-detail lighting">
-								<a href="prestations-interventions" class="images"><img src="images/img-prestations.jpg" alt="Lighting"></a>
+								<a href="ateliers.php" class="images"><img src="images/img-prestations.jpg" alt="Lighting"></a>
 								<div class="product">
 									<a href="prestations-interventions">
 										<span class="name">
@@ -53,7 +53,7 @@
 						<!-- Categories 2 -->
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 							<div class="categories-detail furniture">
-								<a href="creations-personnelles" class="images"><img src="images/img-creations.jpg" alt="Furniture"></a>
+								<a href="creations-personnelles.php" class="images"><img src="images/img-creations.jpg" alt="Furniture"></a>
 								<div class="product">
 									<a href="creations-personnelles">
 										<span class="name">
@@ -67,7 +67,7 @@
 						<!-- Categories 3 -->
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 							<div class="categories-detail decoration">
-								<a href="qui-suis-je" class="images"><img src="images/img-qui-suis-je.jpeg" alt="Decoration"></a>
+								<a href="qui-suis-je.php" class="images"><img src="images/img-qui-suis-je.jpeg" alt="Decoration"></a>
 								<div class="product">
 									<a href="qui-suis-je">
 										<span class="name">
@@ -107,7 +107,7 @@
 		<!-- End Insta Follow Section -->
 	</div>
 
-	<?php require_once("includes/footer.php"); ?>
+	<?php require_once("resources/views/footer.php"); ?>
 
 	<a href="#" id="back-to-top"></a>
 	<!--  JS  -->

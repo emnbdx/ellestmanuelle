@@ -42,8 +42,13 @@
 </head>
 <body class="standard-grid">
 
-	<?php require_once("includes/header.php"); ?>
-	<?php require_once("includes/dal.php"); ?>
+	<?php 
+		require_once("resources/views/header.php");
+		require_once("resources/controllers/CreationController.php"); 
+	
+		$controller = new CreationController();
+	
+	?>
 
 	<div class="page-content">
 		<!-- Breadcrumb Section -->
@@ -80,34 +85,7 @@
 								<div class="widget widget_product_categories">
 									<h3 class="widget-title">Thématique</h3>
 									<ul class="product-categories">
-										<li class="cat-item cat-parent">
-											<a href="#"><span>le papier : origami, pop up</span></a>
-											<a href="#"><span>(2)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>la flore, la nature  : herbier<span></a>
-											<a href="#"><span>(18)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>le textile : couture, broderie, tricot</span></a>
-											<a href="#"><span>(9)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>le scotch et autre matériau insolite : sculptures</span></a>
-											<a href="#"><span>(22)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>la gomme, le carton : linogravure, tampons</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>l’argile : poterie, sculpture</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>les illustrations</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>
+										<?php $controller->buildThemeList() ?>
 									</ul>
 								</div>
 								<!-- Categories -->
@@ -502,7 +480,7 @@
 		<!-- End Portfolio Section -->
 	</div>
 
-	<?php require_once("includes/footer.php"); ?>
+	<?php require_once("resources/views/footer.php"); ?>
 
 	<a href="#" id="back-to-top"></a>
 	<!--  JS  -->

@@ -28,7 +28,7 @@
 </head>
 <body class="contact">
 
-	<?php require_once("includes/header.php"); ?>
+	<?php require_once("resources/views/header.php"); ?>
 
 	<div class="page-content">
 		<!-- Breadcrumb Section -->
@@ -52,7 +52,7 @@
 					<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 							<div class="quote-form">
-								<form class="form-contact js-contact-form" method="POST" action="includes/contact-form.php">
+								<form class="form-contact js-contact-form" method="POST" action="resources/controllers/ContactController.php">
 									<div class="form-input">
 										<input type="text" name="name" placeholder="Nom" required>
 									</div>
@@ -111,7 +111,7 @@
 		<!-- End Map Section -->
 	</div>
 
-	<?php require_once("includes/footer.php"); ?>
+	<?php require_once("resources/views/footer.php"); ?>
 
 	<a href="#" id="back-to-top"></a>
 	<!--  JS  -->
