@@ -4,7 +4,7 @@
 	<!-- Basic Page Needs
 	================================================== -->
 	<meta charset="utf-8">
-	<title>ellestmanuelle.fr | Qui suis-je ?</title>
+	<title>Ellestmanuelle | Qui suis-je ?</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<!-- Mobile Specific Metas
