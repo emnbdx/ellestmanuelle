@@ -43,11 +43,43 @@
 <body class="standard-grid">
 
 	<?php 
+		error_reporting(E_ALL);
+		ini_set("display_errors", 1);
+
 		require_once("resources/views/header.php");
 		require_once("resources/controllers/CreationController.php"); 
 	
 		$controller = new CreationController();
-	
+
+		if(isset($_GET['search']))
+		{
+			$controller->setFilter($_GET['search'], 0, 0);
+		}
+
+		if(isset($_GET['theme']) && is_numeric($_GET['theme']))
+		{
+			$controller->setFilter("", 0, $_GET['theme']);
+		}
+
+		if(isset($_GET['technique']) && is_numeric($_GET['technique']))
+		{
+			$controller->setFilter("", $_GET['technique'], 0);
+		}
+
+		//if(isset($_GET['previouspage']))
+		//{
+		//	$controller->getPreviousPage();
+		//}
+
+		if(isset($_GET['page']) && is_numeric($_GET['page']))
+		{
+			$controller->getPage($_GET['page']);
+		}
+
+		//if(isset($_GET['nextpage']))
+		//{
+		//	$controller->getNextPage();
+		//}
 	?>
 
 	<div class="page-content">
@@ -75,7 +107,7 @@
 								<!-- Search -->
 								<div class="widget widget_search">
 									<form class="search-form" method="get" role="search">
-										<input type="search" name="search" class="search-field" placeholder="Rechercher...">
+										<input type="search" name="search" class="search-field" placeholder="Rechercher..." value="<?php echo $controller->getSearchString() ?>">
 										<button class="search-submit" type="submit">
 											<i class="zmdi zmdi-search"></i>
 										</button>
@@ -84,394 +116,25 @@
 								<!-- Categories -->
 								<div class="widget widget_product_categories">
 									<h3 class="widget-title">Thématique</h3>
-									<ul class="product-categories">
-										<?php $controller->buildThemeList() ?>
-									</ul>
+									<?php $controller->buildThemeList() ?>
 								</div>
 								<!-- Categories -->
 								<div class="widget widget_product_categories">
 									<h3 class="widget-title">Technique</h3>
-									<h5>artistique</h5>
-									<ul class="product-categories">
-										<li class="cat-item cat-parent">
-											<a href="#"><span>illustrations livres pour enfants : lien vers pages illustrations livre enfants</span></a>
-											<a href="#"><span>(2)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>dessins au jour le jour : instagram</span></a>
-											<a href="#"><span>(18)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>linogravure</span></a>
-											<a href="#"><span>(9)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>sculpture </span></a>
-											<a href="#"><span>(22)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>pliage papier : origami, pop up</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>graphisme : commandes historial</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>
-									</ul>
-									<h5>artisanale</h5>										
-									<ul>
-										<li class="cat-item cat-parent">
-											<a href="#"><span>couture canevas</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>										
-										<li class="cat-item cat-parent">
-											<a href="#"><span>broderie</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>										
-										<li class="cat-item cat-parent">
-											<a href="#"><span>tricot</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>										
-										<li class="cat-item cat-parent">
-											<a href="#"><span>poterie</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>										
-										<li class="cat-item cat-parent">
-											<a href="#"><span>décoration objets : peinture porcelaine</span></a>
-											<a href="#"><span>(14)</span></a>
-										</li>
-									</ul>
+									<?php $controller->buildTechniqueList() ?>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 							<div class="content-area">
 								<div class="storefront-sorting">
-									<p class="woocommerce-result-count">Affichage des résultats 1 à 12 sur 35</p>
+									<p class="woocommerce-result-count">
+										<?php $controller->buildProducCountInfo(); ?>
+									</p>
 								</div>
-								<div class="row">
-									<!-- Product 1 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img class="image-cover" src="images/hp-1-featured-1.jpg" alt="product">
-														<img class="image-secondary" src="images/hp-1-featured-11.jpg" alt="product">
-													</a>
-													<a href="#" class="onsale">SALE</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Ta-bl Side Table</a></h5>
-													<span class="price">
-														<del>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																35
-															</span>
-														</del>
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																22
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Product 2 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img src="images/hp-1-featured-2.jpg" alt="product">
-													</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Pendant Lamp</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																45
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Product 3 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img class="image-cover" src="images/hp-1-featured-3.jpg" alt="product">
-														<img class="image-secondary" src="images/hp-1-featured-33.jpg" alt="product">
-													</a>
-													<a href="#" class="onnew">NEW</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Magnolia Dream</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																18
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<!-- Product 5 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img src="images/hp-1-featured-6.jpg" alt="product">
-													</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Laundry Bag</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																37
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Product 6 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img class="image-cover" src="images/hp-1-featured-7.jpg" alt="product">
-														<img class="image-secondary" src="images/hp-1-featured-77.jpg" alt="product">
-													</a>
-													<a href="#" class="onnew">NEW</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Hocko Blanket</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																42
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Product 7 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img class="image-cover" src="images/hp-1-featured-8.jpg" alt="product">
-														<img class="image-secondary" src="images/hp-1-featured-88.jpg" alt="product">
-													</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Tweed Armchair</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																31
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<!-- Product 9 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img src="images/hp-1-featured-13.jpg" alt="product">
-													</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Forrest Vase B</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																45
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Product 10 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img class="image-cover" src="images/hp-1-featured-14.jpg" alt="product">
-													</a>
-													<a href="#" class="onsale">SALE</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Hocko Blanket</a></h5>
-													<span class="price">
-														<del>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																30
-															</span>
-														</del>
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																28
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Product 11 -->
-									<div class="col">
-										<div class="product type-product">
-											<div class="woocommerce-LoopProduct-link">
-												<div class="product-image">
-													<a href="#" class="wp-post-image">
-														<img class="image-cover" src="images/hp-1-featured-5.jpg" alt="product">
-														<img class="image-secondary" src="images/hp-1-featured-55.jpg" alt="product">
-													</a>
-													<div class="yith-wcwl-add-button show">
-				 										<a href="#" class="add_to_wishlist">
-				 											<i class="zmdi zmdi-favorite-outline"></i>
-				 										</a>
-				 									</div>
-				 									<div class="button add_to_cart_button">
-				 										<a href="#">
-				 											<img src="images/icons/shopping-cart-black-icon.png" alt="cart">
-				 										</a>
-				 									</div>
-													<h5 class="woocommerce-loop-product__title"><a href="#">Planting Light</a></h5>
-													<span class="price">
-														<ins>
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>
-																41
-															</span>
-														</ins>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+								<?php $controller->buildProductList() ?>
 							</div>
-							<div class="navigation pagination">
-								<div class="page-numbers">
-									<a href="#" class="page-numbers current">
-										<span>1</span>
-									</a>
-									<a href="#" class="page-numbers">
-										<span>2</span>
-									</a>
-									<a href="#" class="page-numbers">
-										<span>3</span>
-									</a>
-									<a href="#" class="page-numbers">
-										<span><i class="zmdi zmdi-chevron-right"></i></span>
-									</a>
-								</div>
-							</div>
+							<?php $controller->buildPager() ?>							
 						</div>
 					</div>
 				</div>

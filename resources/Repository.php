@@ -2,26 +2,28 @@
 
     class Repository
     {        
-        public function __construct(PDO $connection = null)
+        private $connection;
+        
+        public function __construct()
         {
-            $this->connection = $connection;
-            if ($this->connection === null) {
-                $this->connection = new PDO(
-                        'mysql:host=localhost;dbname=ellestmanuelle', 
-                        'ellestmanuelle', 
-                        'lNI7fRtjiKZpwl1jg35yWPgwToMJx3TA7Vgboyga'
-                    );
-                $this->connection->setAttribute(
-                    PDO::ATTR_ERRMODE, 
-                    PDO::ERRMODE_EXCEPTION
-                );
-            }
+            $this->connection = new PDO(
+                'mysql:host=localhost;dbname=ellestmanuelle', 
+                'root',
+                null
+            );
+            $this->connection->setAttribute(
+                PDO::ATTR_ERRMODE, 
+                PDO::ERRMODE_EXCEPTION
+            );
         }
 
         public function getTheme() {
             $stmt = $this->connection->prepare('
-                SELECT * FROM theme
-            ');
+                SELECT t.id, t.name, count(1) as nb
+                FROM theme t 
+                INNER JOIN tag ta on ta.id_theme = t.id
+                GROUP BY t.id, t.name
+            '); 
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Theme');
 
@@ -30,7 +32,10 @@
 
         public function getTechnique() {
             $stmt = $this->connection->prepare('
-                SELECT * FROM technique
+                SELECT t.id, t.name, t.kind, count(1) as nb
+                FROM technique t
+                INNER JOIN tag ta on ta.id_technique = t.id
+                GROUP BY t.id, t.name, t.kind
             ');
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Technique');
@@ -38,17 +43,56 @@
             return $stmt->fetchAll();
         }
 
-        public function getNbCreation($search, $themeId, $techniqueId) {
+        public function getCreationCount($search, $techniqueId, $themeId) {
+            $sql = "SELECT count(*) as nb from tag t";
+            if($search !== "") {
+                $sql .= " INNER JOIN creation c on c.id = t.id_creation and c.name like '%$search%'";
+            }
+            
+            if($techniqueId !== 0) {
+                $sql .= " WHERE t.id_technique = $techniqueId"; 
+            }
+                        
+            if($themeId !== 0) {
+                if(strpos($sql, "WHERE") === false)
+                    $sql .= " WHERE t.id_theme = $themeId";
+                else 
+                    $sql .= " AND t.id_theme = $themeId";
+            }
+            
+            $stmt = $this->connection->prepare($sql);
+            $stmt->execute();
 
+            return $stmt->fetch()["nb"];;
         }
 
-        public function getCreation($search, $themeId, $techniqueId, $from, $count) {
-                if ($result = $mysqli->query("SELECT * FROM creation OFFSET $from LIMIT $count")) {
-                printf("Select a retourné %d lignes.\n", $result->num_rows);
-            
-                /* Libération du jeu de résultats */
-                $result->close();
+        public function getCreation($search, $techniqueId, $themeId, $from, $count) {
+            $sql = "SELECT c.* FROM creation c INNER JOIN tag t on t.id_creation = c.id";
+            if($search !== "") {
+                $sql .= " WHERE c.name like '%$search%'";
             }
+            
+            if($techniqueId !== 0) {
+                if(strpos($sql, "WHERE") === false)
+                    $sql .= " WHERE t.id_technique = $techniqueId";
+                else
+                    $sql .= " AND t.id_technique = $techniqueId";
+            }
+                        
+            if($themeId !== 0) {
+                if(strpos($sql, "WHERE") === false)
+                    $sql .= " WHERE t.id_theme = $themeId";
+                else 
+                    $sql .= " AND t.id_theme = $themeId";
+            }
+
+            $sql .= " LIMIT $count OFFSET $from";
+
+            $stmt = $this->connection->prepare($sql);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Creation');            
+
+            return $stmt->fetchAll();
         }
     }
 
