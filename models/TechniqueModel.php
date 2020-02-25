@@ -9,12 +9,14 @@
                 
                 $this->kind = $data['kind'];
                 $this->name = $data['name'];
+                $this->name = $data['nb'];
             }
         }
 
         public $id;
         public $kind;
         public $name;
+        public $nb;
     }
 
 ?>

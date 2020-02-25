@@ -1,9 +1,9 @@
 <?php
 
-	include ("dal/Repository.php");
-	include ("models/CreationModel.php");
-	include ("models/TechniqueModel.php");
-	include ("models/ThemeModel.php");
+	require_once("dal/Repository.php");
+	require_once("models/CreationModel.php");
+	require_once("models/TechniqueModel.php");
+	require_once("models/ThemeModel.php");
 
     class CreationController
     {

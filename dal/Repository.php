@@ -1,4 +1,8 @@
 <?php
+    
+    require_once("models/CreationModel.php");
+	require_once("models/TechniqueModel.php");
+	require_once("models/ThemeModel.php");
 
     class Repository
     {        
@@ -18,6 +22,7 @@
         }
 
         public function getTheme() {
+            echo "<script>alert('here');</script>";
             $stmt = $this->connection->prepare('
                 SELECT t.id, t.name, count(1) as nb
                 FROM theme t 
@@ -25,12 +30,15 @@
                 GROUP BY t.id, t.name
             '); 
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Theme');
+            echo "<script>alert('here');</script>";
+            $stmt->setFetchMode(PDO::FETCH_CLASS, Theme::class);
+
 
             return $stmt->fetchAll();
         } 
 
         public function getTechnique() {
+            echo "<script>alert('here');</script>";
             $stmt = $this->connection->prepare('
                 SELECT t.id, t.name, t.kind, count(1) as nb
                 FROM technique t
@@ -38,7 +46,7 @@
                 GROUP BY t.id, t.name, t.kind
             ');
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Technique');
+            $stmt->setFetchMode(PDO::FETCH_CLASS, Technique::class);
             
             return $stmt->fetchAll();
         }
@@ -90,7 +98,7 @@
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Creation');            
+            $stmt->setFetchMode(PDO::FETCH_CLASS, Creation::class);            
 
             return $stmt->fetchAll();
         }

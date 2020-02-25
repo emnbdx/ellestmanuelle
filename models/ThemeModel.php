@@ -8,11 +8,13 @@
                 if (isset($data['id'])) $this->id = $data['id'];
                 
                 $this->name = $data['name'];
+                $this->nb = $data['nb'];
             }
         }
 
         public $id;
         public $name;
+        public $nb;
     }
 
 ?>
