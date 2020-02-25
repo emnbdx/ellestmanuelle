@@ -1,9 +1,9 @@
 <?php
 
-	include ("resources/Repository.php");
-	include ("resources/models/CreationModel.php");
-	include ("resources/models/TechniqueModel.php");
-	include ("resources/models/ThemeModel.php");
+	include ("dal/Repository.php");
+	include ("models/CreationModel.php");
+	include ("models/TechniqueModel.php");
+	include ("models/ThemeModel.php");
 
     class CreationController
     {
@@ -16,7 +16,7 @@
 		private $currentTechniqueId = 0;
 		private $currentThemeId = 0;
 
-		# GET / SET
+		// GET / SET
 		public function getSearchString()
 		{
 			return $this->searchString;
@@ -28,7 +28,7 @@
 			$this->productCount = $this->getProductCount();	
 		}
 
-		# Search Helpers
+		// Search Helpers
 		public function setFilter($searchString, $currentTechniqueId, $currentThemeId)
 		{
 			$this->searchString = $searchString;
@@ -44,7 +44,7 @@
 			return $this->repository->getCreationCount($this->searchString, $this->currentTechniqueId, $this->currentThemeId);
 		}
 
-		# Pagination
+		// Pagination
 		public function getPreviousPage()
 		{
 			$this->currentPage--;
@@ -94,7 +94,7 @@
 			echo "</div>";
 		}
 
-		# HTML Helpers
+		// HTML Helpers
 		public function buildThemeList()
 		{
 			$themes = $this->repository->getTheme();

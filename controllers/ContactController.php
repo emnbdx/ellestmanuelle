@@ -1,16 +1,9 @@
 <?php
 
 
+define("MAIL_HOST", "eddy.montus@gmail.com");
 
-$string = file_get_contents("../config.json");
-
-$option = json_decode($string);
-
-
-
-define("MAIL_HOST", $option->MAIL_HOST);
-
-define("MAIL_TITLE", $option->MAIL_TITLE);
+define("MAIL_TITLE", "Contact depuis le site");
 
 
 

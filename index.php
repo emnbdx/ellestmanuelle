@@ -23,98 +23,95 @@
   ================================================== -->
 	<!-- Bootrap -->
 	<link rel="stylesheet" href="vendor/bootrap/css/bootstrap.min.css"/>
+	<!-- Owl Carousel 2 -->
+	<link rel="stylesheet" href="vendor/owl/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="vendor/owl/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="vendor/owl/css/animate.css">
+	<!-- Slider Revolution CSS Files -->
+    <link rel="stylesheet" type="text/css" href="vendor/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="vendor/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="vendor/revolution/css/navigation.css">
+    <!-- fancybox-master Library -->
+    <link rel="stylesheet" type="text/css" href="vendor/fancybox-master/css/jquery.fancybox.min.css">
+    <!-- Audio Library-->
+    <link rel="stylesheet" href="vendor/mejs/mediaelementplayer.css">
+    <!-- noUiSlider Library -->
+    <link rel="stylesheet" type="text/css" href="vendor/nouislider/css/nouislider.css">
     <!-- Main Style Css -->
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body class="homepages-1">
+<body>
 
-	<?php require_once("resources/views/header.php"); ?>
-	
-	<div class="page-content">
-		<!-- Categories Section -->
-		<section class="categories-hp-1 section-box">
-			<div class="container">
-				<div class="categories-content">
-					<div class="row">
-						<!-- Categories 1 -->
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-							<div class="categories-detail lighting">
-								<a href="ateliers.php" class="images"><img src="images/img-prestations.jpg" alt="Lighting"></a>
-								<div class="product">
-									<a href="prestations-interventions">
-										<span class="name">
-											<span class="line">- </span>
-											Prestations, interventions 
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- Categories 2 -->
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-							<div class="categories-detail furniture">
-								<a href="creations-personnelles.php" class="images"><img src="images/img-creations.jpg" alt="Furniture"></a>
-								<div class="product">
-									<a href="creations-personnelles">
-										<span class="name">
-											<span class="line">- </span>
-											Créations personnelles
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- Categories 3 -->
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-							<div class="categories-detail decoration">
-								<a href="qui-suis-je.php" class="images"><img src="images/img-qui-suis-je.jpeg" alt="Decoration"></a>
-								<div class="product">
-									<a href="qui-suis-je">
-										<span class="name">
-											<span class="line">- </span>
-											Qui suis-je ? 
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Categories Section -->
+	<?php 
+		
+		require_once("views/header.php");
+		
+		// Route requests		
+		$urlPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+		$request = explode('/', $urlPath);
+		$last = end($request);
 
-		<!-- Insta Follow Section -->
-		<section class="insta-hp-1 section-box">
-			<div class="container">
-				<div class="insta-content">
-					<h2>Suivez-moi sur Instagram</h2>
-					<span><a href="https://www.instagram.com/ellestmanuelle" target="_blank">@ellestmanuelle</a></span>
-					<div class="row">
-						<div class="col-12">
-							<div id="pixlee_container"></div>
-							<script type="text/javascript">
-								window.PixleeAsyncInit = function() {
-									Pixlee.init({apiKey:'oSVxoXKYwcLanan5FV_I'});
-									Pixlee.addSimpleWidget({widgetId:'25125'});};
-							</script>
-							<script src="//instafeed.assets.pxlecdn.com/assets/pixlee_widget_1_0_0.js"></script>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Insta Follow Section -->
-	</div>
+		switch ($last) {
+			case '' :
+			case '/' :
+			case 'index' :
+				require_once("views/home.php");
+				break;
+			case 'ateliers' :
+				require_once("views/ateliers.php");
+				break;
+			case 'contact' :
+				require_once("views/contact.php");
+				break;
+			case 'creations-personnelles' :
+				require_once("views/creations-personnelles.php");
+				break;
+			case 'illustrations' :
+				require_once("views/illustrations.php");
+				break;
+			case 'qui-suis-je' :
+				require_once("views/qui-suis-je.php");
+				break;
+		}
 
-	<?php require_once("resources/views/footer.php"); ?>
+		require_once("views/footer.php"); 
+		
+	?>
 
-	<a href="#" id="back-to-top"></a>
+	<a href="#" i d="back-to-top"></a>
 	<!--  JS  -->
 	<!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap -->
 	<script src="vendor/bootrap/js/bootstrap.min.js"></script>
+	<!-- Waypoints Library -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Owl Carousel 2 -->
+  	<script src="vendor/owl/js/owl.carousel.min.js"></script>
+  	<script src="vendor/owl/js/OwlCarousel2Thumbs.min.js"></script>
+  	<!-- Slider Revolution core JavaScript files -->
+    <script src="vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- Isotope Library-->
+	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<!-- Masonry Library -->
+	<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+	<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+	<!-- fancybox-master Library -->
+	<script type="text/javascript" src="vendor/fancybox-master/js/jquery.fancybox.min.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmXgQ65zpsjsEAfNPP9mBAz-5zjnIZBw"></script>
+	<script src="js/theme-map.js"></script>
+	<!-- Countdown Library -->
+	<script src="vendor/countdown/jquery.countdown.min.js"></script>
+	<!-- Audio Library-->
+	<script src="vendor/mejs/mediaelement-and-player.min.js"></script>
+	<!-- noUiSlider Library -->
+	<script type="text/javascript" src="vendor/nouislider/js/nouislider.js"></script>
+	<!-- Form -->
+    <script src="vendor/sweetalert/sweetalert.min.js"></script>
+	<script src="js/config-contact.js"></script>
 	<!-- Main Js -->
 	<script src="js/custom.js"></script>
 </body>

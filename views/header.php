@@ -1,5 +1,5 @@
 <?php 
-	include("resources/controllers/HeaderController.php"); 
+	include("controllers/HeaderController.php"); 
 
 	$controller = new HeaderController();
 ?>
@@ -20,59 +20,59 @@
 						
 						<ul>
 							<li class="menu-item">
-								<a href="index.php"<?php $controller->addCurrentClass("index.php")?>>
+								<a href="index"<?php $controller->addCurrentClass(""); $controller->addCurrentClass("index")?>>
 								Accueil
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="#"<?php $controller->addCurrentClass("ateliers.php"); $controller->addCurrentClass("illustrations.php");?>>
+								<a href="#"<?php $controller->addCurrentClass("ateliers"); $controller->addCurrentClass("illustrations");?>>
 								Prestations / intervention
 								</a>
 								<ul class="sub-menu">
 									<li>
-										<a href="ateliers.php">
+										<a href="ateliers">
 											Animation d'/ateliers
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="ateliers.php#philosophie">Ma philosophie d’animation/ma plus value</a></li>
-											<li><a href="ateliers.php#prestations">Types de prestations</a></li>
-											<li><a href="ateliers.php#tarifs">Tarifs</a></li>
-											<li><a href="ateliers.php#catalogue">Catalogue</a></li>
-											<li><a href="ateliers.php#reference">Ils m’ont fait confiance</a></li>
+											<li><a href="ateliers#philosophie">Ma philosophie d’animation/ma plus value</a></li>
+											<li><a href="ateliers#prestations">Types de prestations</a></li>
+											<li><a href="ateliers#tarifs">Tarifs</a></li>
+											<li><a href="ateliers#catalogue">Catalogue</a></li>
+											<li><a href="ateliers#reference">Ils m’ont fait confiance</a></li>
 										</ul>
 									</li>
 									<li>
-										<a href="illustrations.php">
+										<a href="illustrations">
 											Réalisation d'/illustrations
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="illustrations.php#albums">Albums jeunesse</a></li>
-											<li><a href="illustrations.php#outils">Outils pédagogiques</a></li>
-											<li><a href="illustrations.php#graphisme">Graphisme</a></li>
-											<li><a href="illustrations.php#tarifs">Tarifs</a></li>
-											<li><a href="illustrations.php#reference">Ils m’ont fait confiance</a></li>
+											<li><a href="illustrations#albums">Albums jeunesse</a></li>
+											<li><a href="illustrations#outils">Outils pédagogiques</a></li>
+											<li><a href="illustrations#graphisme">Graphisme</a></li>
+											<li><a href="illustrations#tarifs">Tarifs</a></li>
+											<li><a href="illustrations#reference">Ils m’ont fait confiance</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="creations-personnelles.php"<?php $controller->addCurrentClass("creations-personnelles.php")?>>
+								<a href="creations-personnelles"<?php $controller->addCurrentClass("creations-personnelles")?>>
 								Créations personnelles
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="qui-suis-je.php"<?php $controller->addCurrentClass("qui-suis-je.php")?>>
+								<a href="qui-suis-je"<?php $controller->addCurrentClass("qui-suis-je")?>>
 								Qui suis-je ?
 								</a>
 								<ul class="sub-menu">
-									<li><a href="qui-suis-je.php#histoire">Mon histoire</a></li>
-									<li><a href="qui-suis-je.php#cv">Mon CV</a></li>
+									<li><a href="qui-suis-je#histoire">Mon histoire</a></li>
+									<li><a href="qui-suis-je#cv">Mon CV</a></li>
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="contact.php"<?php $controller->addCurrentClass("contact.php")?>>
+								<a href="contact"<?php $controller->addCurrentClass("contact")?>>
 								Contact
 								</a>
 							</li>
