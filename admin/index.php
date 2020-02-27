@@ -14,9 +14,9 @@
     <h1>Administration</h1>
 
     <div class="container">
-        <a href="pagelist.php">Editer les pages</a>
+        <a href="admin/pages/index.php">Editer les pages</a>
         <br/>
-        <a href="creationlist.php">Editer les creations</a>
+        <a href="admin/creations/index.php">Editer les creations</a>
     </div>
     
     <!-- Optional JavaScript -->
