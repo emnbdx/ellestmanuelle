@@ -22,7 +22,6 @@
         }
 
         public function getTheme() {
-            echo "<script>alert('here');</script>";
             $stmt = $this->connection->prepare('
                 SELECT t.id, t.name, count(1) as nb
                 FROM theme t 
@@ -30,7 +29,6 @@
                 GROUP BY t.id, t.name
             '); 
             $stmt->execute();
-            echo "<script>alert('here');</script>";
             $stmt->setFetchMode(PDO::FETCH_CLASS, Theme::class);
 
 
@@ -38,7 +36,6 @@
         } 
 
         public function getTechnique() {
-            echo "<script>alert('here');</script>";
             $stmt = $this->connection->prepare('
                 SELECT t.id, t.name, t.kind, count(1) as nb
                 FROM technique t
