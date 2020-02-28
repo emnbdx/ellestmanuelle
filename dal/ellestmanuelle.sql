@@ -141,6 +141,32 @@ INSERT INTO `theme` (`id`, `name`) VALUES
 (6, 'l’argile : poterie, sculpture'),
 (7, 'les illustrations');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page`
+--
+
+CREATE TABLE `page` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `content` TEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `page`
+--
+
+INSERT INTO `page` (`id`, `name`, `content`) VALUES
+(1, 'home', ''),
+(2, 'ateliers', ''),
+(3, 'illustrations', ''),
+(4, 'qui-suis-je', '')
+
+--
+-- Dumping data for table `technique`
+--
+
 --
 -- Indexes for dumped tables
 --
@@ -172,6 +198,12 @@ ALTER TABLE `theme`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `page`
+--
+ALTER TABLE `page`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -190,6 +222,11 @@ ALTER TABLE `technique`
 --
 ALTER TABLE `theme`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `page`
+--
+ALTER TABLE `page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --

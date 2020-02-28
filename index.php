@@ -44,8 +44,10 @@
 <body>
 
 	<?php 
-		
 		require_once("views/header.php");
+		require_once("dal/Repository.php"); 
+	
+		$repo = new Repository();
 		
 		// Route requests		
 		$urlPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -56,10 +58,10 @@
 			case '' :
 			case '/' :
 			case 'index' :
-				require_once("views/home.php");
+				echo $repo->getPageContent("home");
 				break;
 			case 'ateliers' :
-				require_once("views/ateliers.php");
+				echo $repo->getPageContent("ateliers");
 				break;
 			case 'contact' :
 				require_once("views/contact.php");
@@ -68,10 +70,10 @@
 				require_once("views/creations-personnelles.php");
 				break;
 			case 'illustrations' :
-				require_once("views/illustrations.php");
+				echo $repo->getPageContent("illustrations");
 				break;
 			case 'qui-suis-je' :
-				require_once("views/qui-suis-je.php");
+				echo $repo->getPageContent("qui-suis-je");
 				break;
 		}
 

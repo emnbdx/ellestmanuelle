@@ -11,13 +11,15 @@
     <title>Ellestmanuelle | Administration</title>
   </head>
   <body>
-    <h1>Administration</h1>
-
     <div class="container">
-        <a href="admin/pages/index.php">Editer les pages</a>
-        <br/>
-        <a href="admin/creations/index.php">Editer les creations</a>
-    </div>
+			<div class="card">
+				<div class="card-header">
+					<i class="fa fa-fw fa-globe"></i><strong>Administration</strong>
+        </div>
+        <a href="creations/index.php" class="btn btn-light">Edit Creations</a>
+        <a href="pages/index.php" class="btn btn-light">Edit Pages</a>
+      </div>
+		</div>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

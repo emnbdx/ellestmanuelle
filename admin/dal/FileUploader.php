@@ -28,16 +28,16 @@
             }
             
             // Check if file already exists
-            if (file_exists($this->target_file)) {
-                echo "Sorry, file already exists.";
-                $uploadOk = 0;
-            }
+            //if (file_exists($this->target_file)) {
+            //    echo "Sorry, file already exists.";
+            //    $uploadOk = 0;
+            //}
 
             // Check file size
-            if ($this->file["size"] > 500000) {
-                echo "Sorry, your file is too large.";
-                $uploadOk = 0;
-            }
+            //if ($this->file["size"] > 500000) {
+            //    echo "Sorry, your file is too large.";
+            //    $uploadOk = 0;
+            //}
 
             // Allow certain file formats
             if($this->imageFileType != "jpg" && $this->imageFileType != "png" && $this->imageFileType != "jpeg"

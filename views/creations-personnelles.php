@@ -1,6 +1,4 @@
 <?php 
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
 	require_once("views/header.php");
 	require_once("controllers/CreationController.php"); 
 
@@ -17,18 +15,18 @@
 	{
 		$controller->setFilter("", $_GET['technique'], 0);
 	}
-	//if(isset($_GET['previouspage']))
-	//{
-	//	$controller->getPreviousPage();
-	//}
+	if(isset($_GET['previouspage']))
+	{
+		$controller->getPreviousPage();
+	}
 	if(isset($_GET['page']) && is_numeric($_GET['page']))
 	{
 		$controller->getPage($_GET['page']);
 	}
-	//if(isset($_GET['nextpage']))
-	//{
-	//	$controller->getNextPage();
-	//}
+	if(isset($_GET['nextpage']))
+	{
+		$controller->getNextPage();
+	}
 ?>
 
 <div class="page-content">

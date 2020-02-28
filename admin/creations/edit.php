@@ -3,7 +3,7 @@
 	include_once('../dal/FileUploader.php');
 	$repo = new AdminRepository();
 	if(isset($_REQUEST['editId']) && $_REQUEST['editId'] != "") {
-		$row = $repo->getAllRecords('creation', '*', ' AND id="'.$_REQUEST['editId'].'"');
+		$creation = $repo->getAllRecords('creation', '*', ' AND id="'.$_REQUEST['editId'].'"')[0];
 	}
 
 	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "") {
@@ -13,9 +13,6 @@
 			exit;
 		} else if ($description == "") {
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=ud&editId='.$_REQUEST['editId']);
-			exit;
-		} else if ($_FILES["picture"]["name"] == "") {
-			header('location:'.$_SERVER['PHP_SELF'].'?msg=up&editId='.$_REQUEST['editId']);
 			exit;
 		}
 
@@ -32,8 +29,8 @@
 		$data = array(
 			'name'=>$name,
 			'description'=>$description,
-			'picture'=>$_FILES["picture"]["name"],
-			'picture2'=>$_FILES["picture2"]["name"],
+			'picture'=>$_FILES["picture"]["name"] == "" ? $creation['picture'] : $_FILES["picture"]["name"],
+			'picture2'=>$_FILES["picture2"]["name"] == "" ? $creation['picture2'] : $_FILES["picture2"]["name"],
 		);
 		
 		$repo->delete('tag', array('id_creation' => $_REQUEST['editId']));
@@ -55,8 +52,8 @@
 			$techniqueInsert = $repo->insert('tag', $data);
 		}
 
-		//header('location: index.php?msg=rus');
-		//exit;
+		header('location: index.php?msg=rus');
+		exit;
 	}
 ?>
 
@@ -86,26 +83,40 @@
 		<div class="card">
 			<div class="card-header">
 				<i class="fa fa-fw fa-plus-circle"></i> <strong>Edit Creation</strong> 
-				<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Creations</a>
+				<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Browse Creations</a>
 			</div>
 			<div class="card-body">				
 				<div class="col-sm-6">
 					<form method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>Name <span class="text-danger">*</span></label>
-							<input type="text" name="name" id="name" class="form-control" value="<?php echo $row[0]['name']; ?>" required>
+							<input type="text" name="name" id="name" class="form-control" value="<?php echo $creation['name']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Description <span class="text-danger">*</span></label>
-							<input type="text" name="description" id="description" class="form-control" value="<?php echo $row[0]['description']; ?>" required>
+							<input type="text" name="description" id="description" class="form-control" value="<?php echo $creation['description']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Picture <span class="text-danger">*</span></label>
-							<input type="file" class="tel form-control" name="picture" id="picture" value="<?php echo $row[0]['picture']; ?>"required>
+							<?php 
+								if ($creation['picture'] != "") {
+							?>
+								<img src="../../images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" />
+							<?php
+								} 
+							?>
+							<input type="file" class="tel form-control" name="picture" id="picture" value="<?php echo $creation['picture']; ?>">						
 						</div>
 						<div class="form-group">
 							<label>Picture 2</label>
-							<input type="file" class="tel form-control" name="picture2" id="picture2" value="<?php echo $row[0]['picture2']; ?>">
+							<?php 
+								if ($creation['picture2'] != "") {
+							?>
+								<img src="../../images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" />
+							<?php
+								} 
+							?>
+							<input type="file" class="tel form-control" name="picture2" id="picture2" value="<?php echo $creation['picture2']; ?>">
 						</div>
 						<div class="form-group">
 							<label>Theme</label>

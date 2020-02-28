@@ -13,46 +13,46 @@
 		} else if ($_FILES["picture"]["name"] == "") {
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=up');
 			exit;
-		} else {
-
-			if ($_FILES["picture"]["name"] != "") {
-				$fileUploader = new FileUploader($_FILES["picture"]);
-				$fileUploader->upload();
-			}
-
-			if ($_FILES["picture2"]["name"] != "") {
-				$fileUploader = new FileUploader($_FILES["picture2"]);
-				$fileUploader->upload();			
-			}
-
-			$data = array(
-				'name'=>$name,
-				'description'=>$description,
-				'picture'=>$_FILES["picture"]["name"],
-				'picture2'=>$_FILES["picture2"]["name"],
-			);
-			$repo->insert('creation', $data);
-			$id = $repo->lastInsertId('creation');
-			
-			if ($theme != "") {
-				$data = array(
-					'id_creation'=>$id,
-					'id_theme'=>$theme,
-				);
-				$themeInsert = $repo->insert('tag', $data);
-			}
-
-			if ($technique != "") {
-				$data = array(
-					'id_creation'=>$id,
-					'id_technique'=>$technique,
-				);
-				$techniqueInsert = $repo->insert('tag', $data);
-			}
-			
-			header('location:index.php?msg=ras');
-			exit;
 		}
+		
+		if ($_FILES["picture"]["name"] != "") {
+			$fileUploader = new FileUploader($_FILES["picture"]);
+			$fileUploader->upload();
+		}
+
+		if ($_FILES["picture2"]["name"] != "") {
+			$fileUploader = new FileUploader($_FILES["picture2"]);
+			$fileUploader->upload();			
+		}
+
+		$data = array(
+			'name'=>$name,
+			'description'=>$description,
+			'picture'=>$_FILES["picture"]["name"],
+			'picture2'=>$_FILES["picture2"]["name"],
+		);
+
+		$repo->insert('creation', $data);
+		$id = $repo->lastInsertId('creation');
+		
+		if ($theme != "") {
+			$data = array(
+				'id_creation'=>$id,
+				'id_theme'=>$theme,
+			);
+			$themeInsert = $repo->insert('tag', $data);
+		}
+
+		if ($technique != "") {
+			$data = array(
+				'id_creation'=>$id,
+				'id_technique'=>$technique,
+			);
+			$techniqueInsert = $repo->insert('tag', $data);
+		}
+			
+		header('location:index.php?msg=ras');
+		exit;
 	}
 ?>
 
@@ -72,18 +72,18 @@
 		<div class="container">
 			<?php
 				if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "un") {
-					echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Name is mandatory field!</div>';
+					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Name is mandatory field!</div>';
 				} else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "ud") {
-					echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Description is mandatory field!</div>';
+					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Description is mandatory field!</div>';
 				} else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up") {
-					echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User phone is mandatory field!</div>';
+					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User phone is mandatory field!</div>';
 				}
 			?>
 
 			<div class="card">
 				<div class="card-header">
 					<i class="fa fa-fw fa-plus-circle"></i> <strong>Add Creation</strong> 
-					<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Creations</a>
+					<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Browse Creations</a>
 				</div>
 				<div class="card-body">
 					<div class="col-sm-6">

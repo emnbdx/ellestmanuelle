@@ -68,7 +68,7 @@
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
 
-            return $stmt->fetch()["nb"];;
+            return $stmt->fetch()["nb"];
         }
 
         public function getCreation($search, $techniqueId, $themeId, $from, $count) {
@@ -100,6 +100,14 @@
             $stmt->setFetchMode(PDO::FETCH_CLASS, Creation::class);            
 
             return $stmt->fetchAll();
+        }
+
+        public function getPageContent($name) {
+            $sql = "SELECT content FROM page where name = '$name'";
+            $stmt = $this->connection->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetch()["content"];
         }
     }
 

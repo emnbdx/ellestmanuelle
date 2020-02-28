@@ -19,22 +19,26 @@
 				$condition	.=	' AND name LIKE "%'.$_REQUEST['name'].'%" ';
 			}
 			
-			$userData = $repo->getAllRecords('creation', '*', $condition, 'ORDER BY id DESC');
+			$creations = $repo->getAllRecords('creation', '*', $condition, 'ORDER BY id DESC');
 		?>
 			<div class="container">
 			<div class="card">
 				<div class="card-header">
 					<i class="fa fa-fw fa-globe"></i><strong>Browse Creations</strong> 
-					<a href="add.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Add Creations</a></div>
+					<a href="../index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Return to admin</a>
+					<a href="add.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Add Creation</a>
+				</div>
 				<div class="card-body">
 					<?php
-					if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rds") {
-						echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record deleted successfully!</div>';
-					} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rus") {
-						echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record updated successfully!</div>';
-					} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rna") {
-						echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> There is some thing wrong <strong>Please try again!</strong></div>';
-					}
+						if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="ras") {
+							echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record added successfully!</div>';
+						} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rds") {
+								echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record deleted successfully!</div>';
+						} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rus") {
+							echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record updated successfully!</div>';
+						} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rna") {
+							echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> There is some thing wrong <strong>Please try again!</strong></div>';
+						}
 					?>
 					<div class="col-sm-12">
 						<h5 class="card-title"><i class="fa fa-fw fa-search"></i> Find Creation</h5>
@@ -76,18 +80,18 @@
 					</thead>
 					<tbody>
 						<?php 
-						if (count($userData) > 0) {
-							foreach ($userData as $val) {
+						if (count($creations) > 0) {
+							foreach ($creations as $creation) {
 						?>
 						<tr>
-							<td><?php echo $val['id'];?></td>
-							<td><?php echo $val['name'];?></td>
-							<td><?php echo $val['description'];?></td>
-							<td><?php echo $val['picture'];?></td>
-							<td><?php echo $val['picture2'];?></td>
+							<td><?php echo $creation['id'];?></td>
+							<td><?php echo $creation['name'];?></td>
+							<td><?php echo $creation['description'];?></td>
+							<td><?php echo $creation['picture'];?></td>
+							<td><?php echo $creation['picture2'];?></td>
 							<td align="center">
-								<a href="edit.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> | 
-								<a href="delete.php?delId=<?php echo $val['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this creation?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
+								<a href="edit.php?editId=<?php echo $creation['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> | 
+								<a href="delete.php?delId=<?php echo $creation['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this creation?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
 							</td>
 
 						</tr>
