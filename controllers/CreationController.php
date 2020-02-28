@@ -164,8 +164,8 @@
 				echo "		<div class=\"woocommerce-LoopProduct-link\">";
 				echo "			<div class=\"product-image\">";
 				echo "				<a href=\"#\" class=\"wp-post-image\">";
-				echo "					<img class=\"image-cover\" src=\"images/hp-1-featured-1.jpg\" alt=\"product\">";
-				echo "					<img class=\"image-secondary\" src=\"images/hp-1-featured-11.jpg\" alt=\"product\">";
+				echo "					<img class=\"image-cover\" src=\"images/uploads/" . $product->picture . "\" alt=\"product\">";
+				echo "					<img class=\"image-secondary\" src=\"images/uploads/" . $product->picture2 . "\" alt=\"product\">";
 				echo "				</a>";
 				//echo "				<a href=\"#\" class=\"onsale\">SALE</a>";
 				echo "				<div class=\"yith-wcwl-add-button show\">";
