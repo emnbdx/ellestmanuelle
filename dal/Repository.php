@@ -72,12 +72,13 @@
         }
 
         public function getCreation($search, $techniqueId, $themeId, $from, $count) {
-            $sql = "SELECT c.* FROM creation c INNER JOIN tag t on t.id_creation = c.id";
+            $sql = "SELECT c.* FROM creation c";
             if($search !== "") {
                 $sql .= " WHERE c.name like '%$search%'";
             }
             
             if($techniqueId !== 0) {
+                $sql .= " INNER JOIN tag t on t.id_creation = c.id";
                 if(strpos($sql, "WHERE") === false)
                     $sql .= " WHERE t.id_technique = $techniqueId";
                 else
@@ -85,6 +86,7 @@
             }
                         
             if($themeId !== 0) {
+                $sql .= " INNER JOIN tag t on t.id_creation = c.id";
                 if(strpos($sql, "WHERE") === false)
                     $sql .= " WHERE t.id_theme = $themeId";
                 else 
