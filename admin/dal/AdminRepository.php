@@ -1,5 +1,5 @@
 <?php
-class Database{
+class AdminRepository {
  
     /**
      * database connection object
@@ -10,10 +10,17 @@ class Database{
     /**
      * Connect to the database
      */
-    public function __construct(\PDO $pdo)
+    public function __construct()
     {
-        $this->pdo = $pdo;
-        $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this->pdo = new PDO(
+            'mysql:host=localhost;dbname=ellestmanuelle', 
+            'root',
+            null
+        );
+        $this->pdo->setAttribute(
+            PDO::ATTR_ERRMODE, 
+            PDO::ERRMODE_EXCEPTION
+        );
     }
  
     /**
