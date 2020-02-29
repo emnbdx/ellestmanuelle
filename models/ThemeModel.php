@@ -1,5 +1,4 @@
 <?php
-
     class Theme
     {
         public function __construct($data = null)
@@ -16,5 +15,4 @@
         public $name;
         public $nb;
     }
-
 ?>

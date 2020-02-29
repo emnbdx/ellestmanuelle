@@ -2,26 +2,33 @@
 	include_once('../dal/AdminRepository.php');
 	include_once('../dal/FileUploader.php');
 	$repo = new AdminRepository();
-	if(isset($_REQUEST['editId']) && $_REQUEST['editId'] != "") {
+	if(isset($_REQUEST['editId']) && $_REQUEST['editId'] != "")
+	{
 		$creation = $repo->getAllRecords('creation', '*', ' AND id="'.$_REQUEST['editId'].'"')[0];
 	}
 
-	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "") {
+	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "")
+	{
 		extract($_REQUEST);
-		if ($name == "") {
+		if ($name == "")
+		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=un&editId='.$_REQUEST['editId']);
 			exit;
-		} else if ($description == "") {
+		}
+		else if ($description == "")
+		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=ud&editId='.$_REQUEST['editId']);
 			exit;
 		}
 
-		if ($_FILES["picture"]["name"] != "") {
+		if ($_FILES["picture"]["name"] != "")
+		{
 			$fileUploader = new FileUploader($_FILES["picture"]);
 			$fileUploader->upload();
 		}
 
-		if ($_FILES["picture2"]["name"] != "") {
+		if ($_FILES["picture2"]["name"] != "")
+		{
 			$fileUploader = new FileUploader($_FILES["picture2"]);
 			$fileUploader->upload();			
 		}
@@ -36,7 +43,8 @@
 		$repo->delete('tag', array('id_creation' => $_REQUEST['editId']));
 		$repo->update('creation', $data, array('id' => $editId));
 
-		if ($theme != "") {
+		if ($theme != "")
+		{
 			$data = array(
 				'id_creation'=>$editId,
 				'id_theme'=>$theme,
@@ -44,7 +52,8 @@
 			$themeInsert = $repo->insert('tag', $data);
 		}
 
-		if ($technique != "") {
+		if ($technique != "")
+		{
 			$data = array(
 				'id_creation'=>$editId,
 				'id_technique'=>$technique,
@@ -72,11 +81,16 @@
   <body>
    	<div class="container">
 		<?php
-			if(isset($_REQUEST['msg']) && $_REQUEST['msg'] == "un") {
+			if(isset($_REQUEST['msg']) && $_REQUEST['msg'] == "un")
+			{
 				echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Name is mandatory field!</div>';
-			} else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "ud") {
+			}
+			else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "ud")
+			{
 				echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Description is mandatory field!</div>';
-			} else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up") {
+			}
+			else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up")
+			{
 				echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Picture is mandatory field!</div>';
 			}
 		?>
@@ -99,7 +113,8 @@
 						<div class="form-group">
 							<label>Picture <span class="text-danger">*</span></label>
 							<?php 
-								if ($creation['picture'] != "") {
+								if ($creation['picture'] != "")
+								{
 							?>
 								<img src="../../images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" />
 							<?php
@@ -110,7 +125,8 @@
 						<div class="form-group">
 							<label>Picture 2</label>
 							<?php 
-								if ($creation['picture2'] != "") {
+								if ($creation['picture2'] != "")
+								{
 							?>
 								<img src="../../images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" />
 							<?php
@@ -125,7 +141,8 @@
 								<?php 
 									$themes = $repo->getAllRecords('theme', '*', '', 'ORDER BY name');
 									$currentTheme = $repo->getAllRecords('tag', '*', ' AND id_theme is not null AND id_creation="'.$_REQUEST['editId'].'"');
-									foreach ($themes as $theme) {
+									foreach ($themes as $theme)
+									{
 								?>
 									<option value="<?php echo $theme["id"]?>"<?php echo count($currentTheme) > 0 && $currentTheme[0]['id_theme'] == $theme["id"] ? "selected" : ""?>><?php echo $theme["name"]?></option>
 								<?php } ?>
@@ -138,7 +155,8 @@
 								<?php 
 									$techniques = $repo->getAllRecords('technique', '*', '', 'ORDER BY name');
 									$currentTechnique = $repo->getAllRecords('tag', '*', ' AND id_technique is not null AND id_creation="'.$_REQUEST['editId'].'"');
-									foreach ($techniques as $technique) {
+									foreach ($techniques as $technique)
+									{
 								?>
 									<option value="<?php echo $technique["id"]?>"<?php echo count($currentTechnique) > 0 && $currentTechnique[0]['id_technique'] == $technique["id"] ? "selected" : ""?>><?php echo $technique["name"]?></option>
 								<?php } ?>

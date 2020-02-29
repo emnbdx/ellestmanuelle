@@ -1,5 +1,4 @@
 <?php
-
     class Technique
     {
         public function __construct($data = null)
@@ -18,5 +17,4 @@
         public $name;
         public $nb;
     }
-
 ?>

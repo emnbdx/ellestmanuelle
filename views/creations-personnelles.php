@@ -2,30 +2,30 @@
 	require_once("views/header.php");
 	require_once("controllers/CreationController.php"); 
 
-	$controller = new CreationController();
+	$creationController = new CreationController();
 	if(isset($_GET['search']))
 	{
-		$controller->setFilter($_GET['search'], 0, 0);
+		$creationController->setFilter($_GET['search'], 0, 0);
 	}
 	if(isset($_GET['theme']) && is_numeric($_GET['theme']))
 	{
-		$controller->setFilter("", 0, $_GET['theme']);
+		$creationController->setFilter("", 0, $_GET['theme']);
 	}
 	if(isset($_GET['technique']) && is_numeric($_GET['technique']))
 	{
-		$controller->setFilter("", $_GET['technique'], 0);
+		$creationController->setFilter("", $_GET['technique'], 0);
 	}
 	if(isset($_GET['previouspage']))
 	{
-		$controller->getPreviousPage();
+		$creationController->getPreviousPage();
 	}
 	if(isset($_GET['page']) && is_numeric($_GET['page']))
 	{
-		$controller->getPage($_GET['page']);
+		$creationController->getPage($_GET['page']);
 	}
 	if(isset($_GET['nextpage']))
 	{
-		$controller->getNextPage();
+		$creationController->getNextPage();
 	}
 ?>
 
@@ -53,7 +53,7 @@
 							<!-- Search -->
 							<div class="widget widget_search">
 								<form class="search-form" method="get" role="search">
-									<input type="search" name="search" class="search-field" placeholder="Rechercher..." value="<?php echo $controller->getSearchString() ?>">
+									<input type="search" name="search" class="search-field" placeholder="Rechercher..." value="<?php echo $creationController->getSearchString() ?>">
 									<button class="search-submit" type="submit">
 										<i class="zmdi zmdi-search"></i>
 									</button>
@@ -62,12 +62,12 @@
 							<!-- Categories -->
 							<div class="widget widget_product_categories">
 								<h3 class="widget-title">Thématique</h3>
-								<?php $controller->buildThemeList() ?>
+								<?php $creationController->buildThemeList() ?>
 							</div>
 							<!-- Categories -->
 							<div class="widget widget_product_categories">
 								<h3 class="widget-title">Technique</h3>
-								<?php $controller->buildTechniqueList() ?>
+								<?php $creationController->buildTechniqueList() ?>
 							</div>
 						</div>
 					</div>
@@ -75,12 +75,12 @@
 						<div class="content-area">
 							<div class="storefront-sorting">
 								<p class="woocommerce-result-count">
-									<?php $controller->buildProducCountInfo(); ?>
+									<?php $creationController->buildProducCountInfo(); ?>
 								</p>
 							</div>
-							<?php $controller->buildProductList() ?>
+							<?php $creationController->buildProductList() ?>
 						</div>
-						<?php $controller->buildPager() ?>							
+						<?php $creationController->buildPager() ?>							
 					</div>
 				</div>
 			</div>

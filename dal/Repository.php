@@ -1,5 +1,5 @@
-<?php
-    
+<?php    
+    require_once("config.php");
     require_once("models/CreationModel.php");
 	require_once("models/TechniqueModel.php");
 	require_once("models/ThemeModel.php");
@@ -11,9 +11,9 @@
         public function __construct()
         {
             $this->connection = new PDO(
-                'mysql:host=localhost;dbname=ellestmanuelle', 
-                'root',
-                null
+                "mysql:host=" . Config::$DBURL . ";dbname=" . Config::$DBNAME, 
+                Config::$DBUSER,
+                Config::$DBPASSWORD
             );
             $this->connection->setAttribute(
                 PDO::ATTR_ERRMODE, 
@@ -21,7 +21,8 @@
             );
         }
 
-        public function getTheme() {
+        public function getTheme()
+        {
             $stmt = $this->connection->prepare('
                 SELECT t.id, t.name, count(1) as nb
                 FROM theme t 
@@ -31,11 +32,11 @@
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, Theme::class);
 
-
             return $stmt->fetchAll();
         } 
 
-        public function getTechnique() {
+        public function getTechnique()
+        {
             $stmt = $this->connection->prepare('
                 SELECT t.id, t.name, t.kind, count(1) as nb
                 FROM technique t
@@ -48,17 +49,21 @@
             return $stmt->fetchAll();
         }
 
-        public function getCreationCount($search, $techniqueId, $themeId) {
+        public function getCreationCount($search, $techniqueId, $themeId)
+        {
             $sql = "SELECT count(*) as nb from tag t";
-            if($search !== "") {
+            if($search !== "")
+            {
                 $sql .= " INNER JOIN creation c on c.id = t.id_creation and c.name like '%$search%'";
             }
             
-            if($techniqueId !== 0) {
+            if($techniqueId !== 0)
+            {
                 $sql .= " WHERE t.id_technique = $techniqueId"; 
             }
                         
-            if($themeId !== 0) {
+            if($themeId !== 0)
+            {
                 if(strpos($sql, "WHERE") === false)
                     $sql .= " WHERE t.id_theme = $themeId";
                 else 
@@ -71,13 +76,16 @@
             return $stmt->fetch()["nb"];
         }
 
-        public function getCreation($search, $techniqueId, $themeId, $from, $count) {
+        public function getCreation($search, $techniqueId, $themeId, $from, $count)
+        {
             $sql = "SELECT c.* FROM creation c";
-            if($search !== "") {
+            if($search !== "")
+            {
                 $sql .= " WHERE c.name like '%$search%'";
             }
             
-            if($techniqueId !== 0) {
+            if($techniqueId !== 0)
+            {
                 $sql .= " INNER JOIN tag t on t.id_creation = c.id";
                 if(strpos($sql, "WHERE") === false)
                     $sql .= " WHERE t.id_technique = $techniqueId";
@@ -85,7 +93,8 @@
                     $sql .= " AND t.id_technique = $techniqueId";
             }
                         
-            if($themeId !== 0) {
+            if($themeId !== 0)
+            {
                 $sql .= " INNER JOIN tag t on t.id_creation = c.id";
                 if(strpos($sql, "WHERE") === false)
                     $sql .= " WHERE t.id_theme = $themeId";
@@ -102,7 +111,8 @@
             return $stmt->fetchAll();
         }
 
-        public function getPageContent($name) {
+        public function getPageContent($name)
+        {
             $sql = "SELECT content FROM page where name = '$name'";
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
@@ -110,5 +120,4 @@
             return $stmt->fetch()["content"];
         }
     }
-
 ?>

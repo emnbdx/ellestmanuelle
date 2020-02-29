@@ -19,7 +19,7 @@
 					<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 							<div class="quote-form">
-								<form class="form-contact js-contact-form" method="POST" action="resources/controllers/ContactController.php">
+								<form class="form-contact js-contact-form" method="POST" action="controllers/ContactController.php">
 									<div class="form-input">
 										<input type="text" name="name" placeholder="Nom" required>
 									</div>

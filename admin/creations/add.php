@@ -2,25 +2,33 @@
 	include_once('../dal/AdminRepository.php');
 	include_once('../dal/FileUploader.php');
 	$repo = new AdminRepository();
-	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "") {
+	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "")
+	{
 		extract($_REQUEST);
-		if ($name == "") {
+		if ($name == "")
+		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=un');
 			exit;
-		} else if ($description == "") {
+		} 
+		else if ($description == "")
+		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=ud');
 			exit;
-		} else if ($_FILES["picture"]["name"] == "") {
+		}
+		else if ($_FILES["picture"]["name"] == "")
+		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=up');
 			exit;
 		}
 		
-		if ($_FILES["picture"]["name"] != "") {
+		if ($_FILES["picture"]["name"] != "")
+		{
 			$fileUploader = new FileUploader($_FILES["picture"]);
 			$fileUploader->upload();
 		}
 
-		if ($_FILES["picture2"]["name"] != "") {
+		if ($_FILES["picture2"]["name"] != "")
+		{
 			$fileUploader = new FileUploader($_FILES["picture2"]);
 			$fileUploader->upload();			
 		}
@@ -35,7 +43,8 @@
 		$repo->insert('creation', $data);
 		$id = $repo->lastInsertId('creation');
 		
-		if ($theme != "") {
+		if ($theme != "")
+		{
 			$data = array(
 				'id_creation'=>$id,
 				'id_theme'=>$theme,
@@ -43,7 +52,8 @@
 			$themeInsert = $repo->insert('tag', $data);
 		}
 
-		if ($technique != "") {
+		if ($technique != "")
+		{
 			$data = array(
 				'id_creation'=>$id,
 				'id_technique'=>$technique,
@@ -71,11 +81,16 @@
   	<body>
 		<div class="container">
 			<?php
-				if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "un") {
+				if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "un")
+				{
 					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Name is mandatory field!</div>';
-				} else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "ud") {
+				}
+				else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "ud")
+				{
 					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Description is mandatory field!</div>';
-				} else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up") {
+				}
+				else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up")
+				{
 					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User phone is mandatory field!</div>';
 				}
 			?>
@@ -110,7 +125,8 @@
 									<option></option>
 									<?php 
 										$themes = $repo->getAllRecords('theme', '*', '', 'ORDER BY name');
-										foreach ($themes as $theme) {
+										foreach ($themes as $theme)
+										{
 									?>
 										<option value="<?php echo $theme["id"]?>"><?php echo $theme["name"]?></option>
 									<?php } ?>
@@ -122,7 +138,8 @@
 									<option></option>
 									<?php 
 										$techniques = $repo->getAllRecords('technique', '*', '', 'ORDER BY name');
-										foreach ($techniques as $technique) {
+										foreach ($techniques as $technique)
+										{
 									?>
 										<option value="<?php echo $technique["id"]?>"><?php echo $technique["name"]?></option>
 									<?php } ?>

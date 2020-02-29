@@ -2,13 +2,17 @@
 	include_once('../dal/AdminRepository.php');
 	include_once('../dal/FileUploader.php');
 	$repo = new AdminRepository();
-	if(isset($_REQUEST['editId']) && $_REQUEST['editId'] != "") {
+
+	if(isset($_REQUEST['editId']) && $_REQUEST['editId'] != "")
+	{
 		$page = $repo->getAllRecords('page', '*', ' AND id="'.$_REQUEST['editId'].'"')[0];
 	}
 
-	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "") {
+	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "")
+	{
 		extract($_REQUEST);
-		if ($content == "") {
+		if ($content == "")
+		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=uc&editId='.$_REQUEST['editId']);
 			exit;
 		}
@@ -39,7 +43,8 @@
   <body>
    	<div class="container">
 		<?php
-			if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "uc") {
+			if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "uc")
+			{
 				echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Content is mandatory field!</div>';
 			}
 		?>

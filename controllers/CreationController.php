@@ -1,5 +1,4 @@
 <?php
-
 	require_once("dal/Repository.php");
 	require_once("models/CreationModel.php");
 	require_once("models/TechniqueModel.php");
@@ -77,7 +76,8 @@
 			//	echo "		</a>";
 			//}
 			
-			for ($i=0; $i < $pageCount; $i++) { 
+			for ($i=0; $i < $pageCount; $i++)
+			{ 
 				echo "		<a href=\"?page=$i\" class=\"page-numbers" . ($i == $this->currentPage ? " current" : "") . "\">";
 				echo "			<span>" . ($i + 1) . "</span>";
 				echo "		</a>";
@@ -204,5 +204,4 @@
 			echo "</div>";
 		}
 	}
-
 ?>

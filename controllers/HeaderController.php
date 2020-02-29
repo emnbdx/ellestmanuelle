@@ -1,5 +1,4 @@
-<?php 						
-	
+<?php
 	class HeaderController
 	{
 		public function addCurrentClass($page)
@@ -9,6 +8,5 @@
 			if($currentUri === $page)
 				echo " class=\"current\"";
 		}
-	}
-	
+	}	
 ?>

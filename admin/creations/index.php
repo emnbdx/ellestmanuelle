@@ -15,7 +15,8 @@
 			include_once('../dal/AdminRepository.php');
 			$repo = new AdminRepository();
 			$condition = '';
-			if (isset($_REQUEST['name']) && $_REQUEST['name']!="") {
+			if (isset($_REQUEST['name']) && $_REQUEST['name']!="")
+			{
 				$condition	.=	' AND name LIKE "%'.$_REQUEST['name'].'%" ';
 			}
 			
@@ -30,13 +31,20 @@
 				</div>
 				<div class="card-body">
 					<?php
-						if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="ras") {
+						if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="ras")
+						{
 							echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record added successfully!</div>';
-						} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rds") {
+						}
+						else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rds")
+						{
 								echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record deleted successfully!</div>';
-						} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rus") {
+						}
+						else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rus")
+						{
 							echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record updated successfully!</div>';
-						} else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rna") {
+						}
+						else if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rna")
+						{
 							echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> There is some thing wrong <strong>Please try again!</strong></div>';
 						}
 					?>
@@ -80,8 +88,10 @@
 					</thead>
 					<tbody>
 						<?php 
-						if (count($creations) > 0) {
-							foreach ($creations as $creation) {
+						if (count($creations) > 0)
+						{
+							foreach ($creations as $creation)
+							{
 						?>
 						<tr>
 							<td><?php echo $creation['id'];?></td>
@@ -97,7 +107,9 @@
 						</tr>
 						<?php 
 							}
-						} else {
+						}
+						else
+						{
 						?>
 						<tr><td colspan="6" align="center">No Record(s) Found!</td></tr>
 						<?php } ?>

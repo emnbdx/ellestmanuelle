@@ -24,7 +24,8 @@
 				</div>
 				<div class="card-body">
 					<?php
-						if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rus") {
+						if (isset($_REQUEST['msg']) && $_REQUEST['msg']=="rus")
+						{
 							echo '<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record updated successfully!</div>';
 						}
 					?>

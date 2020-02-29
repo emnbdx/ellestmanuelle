@@ -1,5 +1,4 @@
 <?php
-
     class Creation
     {
         public function __construct($data = null)
@@ -20,5 +19,4 @@
         public $picture;
         public $picture2;
     }
-
 ?>

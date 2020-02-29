@@ -1,10 +1,15 @@
+<?php
+	require_once("controllers/RouterController.php");
+	$routerController = new RouterController();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<!-- Basic Page Needs
 	================================================== -->
 	<meta charset="utf-8">
-	<title>Ellestmanuelle | Accueil</title>
+	<title><?php $routerController->getTitle() ?></title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<!-- Mobile Specific Metas
@@ -45,40 +50,10 @@
 
 	<?php 
 		require_once("views/header.php");
-		require_once("dal/Repository.php"); 
-	
-		$repo = new Repository();
 		
-		// Route requests		
-		$urlPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-		$request = explode('/', $urlPath);
-		$last = end($request);
+		$routerController->getContent();
 
-		switch ($last) {
-			case '' :
-			case '/' :
-			case 'index' :
-				echo $repo->getPageContent("home");
-				break;
-			case 'ateliers' :
-				echo $repo->getPageContent("ateliers");
-				break;
-			case 'contact' :
-				require_once("views/contact.php");
-				break;
-			case 'creations-personnelles' :
-				require_once("views/creations-personnelles.php");
-				break;
-			case 'illustrations' :
-				echo $repo->getPageContent("illustrations");
-				break;
-			case 'qui-suis-je' :
-				echo $repo->getPageContent("qui-suis-je");
-				break;
-		}
-
-		require_once("views/footer.php"); 
-		
+		require_once("views/footer.php"); 		
 	?>
 
 	<a href="#" i d="back-to-top"></a>

@@ -1,7 +1,7 @@
 <?php 
 	include("controllers/HeaderController.php"); 
 
-	$controller = new HeaderController();
+	$headerController = new HeaderController();
 ?>
 
 <header class="header">
@@ -20,12 +20,12 @@
 						
 						<ul>
 							<li class="menu-item">
-								<a href="index"<?php $controller->addCurrentClass(""); $controller->addCurrentClass("index")?>>
+								<a href="index"<?php $headerController->addCurrentClass(""); $headerController->addCurrentClass("index")?>>
 								Accueil
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="#"<?php $controller->addCurrentClass("ateliers"); $controller->addCurrentClass("illustrations");?>>
+								<a href="#"<?php $headerController->addCurrentClass("ateliers"); $headerController->addCurrentClass("illustrations");?>>
 								Prestations / intervention
 								</a>
 								<ul class="sub-menu">
@@ -58,12 +58,12 @@
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="creations-personnelles"<?php $controller->addCurrentClass("creations-personnelles")?>>
+								<a href="creations-personnelles"<?php $headerController->addCurrentClass("creations-personnelles")?>>
 								Créations personnelles
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="qui-suis-je"<?php $controller->addCurrentClass("qui-suis-je")?>>
+								<a href="qui-suis-je"<?php $headerController->addCurrentClass("qui-suis-je")?>>
 								Qui suis-je ?
 								</a>
 								<ul class="sub-menu">
@@ -72,7 +72,7 @@
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="contact"<?php $controller->addCurrentClass("contact")?>>
+								<a href="contact"<?php $headerController->addCurrentClass("contact")?>>
 								Contact
 								</a>
 							</li>
