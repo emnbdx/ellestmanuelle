@@ -20,7 +20,7 @@
 			<div class="card">
 				<div class="card-header">
 					<i class="fa fa-fw fa-globe"></i><strong>Browse Pages</strong> 
-					<a href="../index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Return to admin</a>
+					<a href="/admin/index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Return to admin</a>
 				</div>
 				<div class="card-body">
 					<?php

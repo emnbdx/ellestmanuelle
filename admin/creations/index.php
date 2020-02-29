@@ -26,7 +26,7 @@
 			<div class="card">
 				<div class="card-header">
 					<i class="fa fa-fw fa-globe"></i><strong>Browse Creations</strong> 
-					<a href="../index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Return to admin</a>
+					<a href="/admin/index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Return to admin</a>
 					<a href="add.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Add Creation</a>
 				</div>
 				<div class="card-body">

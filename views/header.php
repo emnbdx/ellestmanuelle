@@ -20,7 +20,7 @@
 						
 						<ul>
 							<li class="menu-item">
-								<a href="index"<?php $headerController->addCurrentClass(""); $headerController->addCurrentClass("index")?>>
+								<a href=""<?php $headerController->addCurrentClass(""); $headerController->addCurrentClass("index")?>>
 								Accueil
 								</a>
 							</li>
@@ -35,11 +35,11 @@
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="ateliers#philosophie">Ma philosophie d’animation/ma plus value</a></li>
-											<li><a href="ateliers#prestations">Types de prestations</a></li>
-											<li><a href="ateliers#tarifs">Tarifs</a></li>
-											<li><a href="ateliers#catalogue">Catalogue</a></li>
-											<li><a href="ateliers#reference">Ils m’ont fait confiance</a></li>
+											<li><a href="/ateliers#philosophie">Ma philosophie d’animation/ma plus value</a></li>
+											<li><a href="/ateliers#prestations">Types de prestations</a></li>
+											<li><a href="/ateliers#tarifs">Tarifs</a></li>
+											<li><a href="/ateliers#catalogue">Catalogue</a></li>
+											<li><a href="/ateliers#reference">Ils m’ont fait confiance</a></li>
 										</ul>
 									</li>
 									<li>
@@ -48,31 +48,31 @@
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="illustrations#albums">Albums jeunesse</a></li>
-											<li><a href="illustrations#outils">Outils pédagogiques</a></li>
-											<li><a href="illustrations#graphisme">Graphisme</a></li>
-											<li><a href="illustrations#tarifs">Tarifs</a></li>
-											<li><a href="illustrations#reference">Ils m’ont fait confiance</a></li>
+											<li><a href="/illustrations#albums">Albums jeunesse</a></li>
+											<li><a href="/illustrations#outils">Outils pédagogiques</a></li>
+											<li><a href="/illustrations#graphisme">Graphisme</a></li>
+											<li><a href="/illustrations#tarifs">Tarifs</a></li>
+											<li><a href="/illustrations#reference">Ils m’ont fait confiance</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="creations-personnelles"<?php $headerController->addCurrentClass("creations-personnelles")?>>
+								<a href="/creations-personnelles"<?php $headerController->addCurrentClass("creations-personnelles")?>>
 								Créations personnelles
 								</a>
 							</li>
 							<li class="menu-item">
-								<a href="qui-suis-je"<?php $headerController->addCurrentClass("qui-suis-je")?>>
+								<a href="/qui-suis-je"<?php $headerController->addCurrentClass("qui-suis-je")?>>
 								Qui suis-je ?
 								</a>
 								<ul class="sub-menu">
-									<li><a href="qui-suis-je#histoire">Mon histoire</a></li>
-									<li><a href="qui-suis-je#cv">Mon CV</a></li>
+									<li><a href="/qui-suis-je#histoire">Mon histoire</a></li>
+									<li><a href="/qui-suis-je#cv">Mon CV</a></li>
 								</ul>
 							</li>
 							<li class="menu-item">
-								<a href="contact"<?php $headerController->addCurrentClass("contact")?>>
+								<a href="/contact"<?php $headerController->addCurrentClass("contact")?>>
 								Contact
 								</a>
 							</li>
@@ -121,11 +121,11 @@
 								</span>
 								</a>
 								<ul class="drop-menu bottom-right">
-									<li><a class="drop-menu-inner" href="ateliers.php#philosophie">Ma philosophie d’animation/ma plus value</a></li>
-									<li><a class="drop-menu-inner" href="ateliers.php#prestations">Types de prestations</a></li>
-									<li><a class="drop-menu-inner" href="ateliers.php#tarifs">Tarifs</a></li>
-									<li><a class="drop-menu-inner" href="ateliers.php#catalogue">Catalogue</a></li>
-									<li><a class="drop-menu-inner" href="ateliers.php#reference">Ils m’ont fait confiance</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers.php#philosophie">Ma philosophie d’animation/ma plus value</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers.php#prestations">Types de prestations</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers.php#tarifs">Tarifs</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers.php#catalogue">Catalogue</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers.php#reference">Ils m’ont fait confiance</a></li>
 								</ul>
 							</li>
 							<li class="drop">
@@ -136,17 +136,17 @@
 								</span>
 								</a>
 								<ul class="drop-menu bottom-right">
-									<li><a class="drop-menu-inner" href="illustrations.php#albums">Albums jeunesse</a></li>
-									<li><a class="drop-menu-inner" href="illustrations.php#outils">Outils pédagogiques</a></li>
-									<li><a class="drop-menu-inner" href="illustrations.php#graphisme">Graphisme</a></li>
-									<li><a class="drop-menu-inner" href="illustrations.php#tarifs">Tarifs</a></li>
-									<li><a class="drop-menu-inner" href="illustrations.php#reference">Ils m’ont fait confiance</a></li>
+									<li><a class="drop-menu-inner" href="/illustrations.php#albums">Albums jeunesse</a></li>
+									<li><a class="drop-menu-inner" href="/illustrations.php#outils">Outils pédagogiques</a></li>
+									<li><a class="drop-menu-inner" href="/illustrations.php#graphisme">Graphisme</a></li>
+									<li><a class="drop-menu-inner" href="/illustrations.php#tarifs">Tarifs</a></li>
+									<li><a class="drop-menu-inner" href="/illustrations.php#reference">Ils m’ont fait confiance</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 					<li class="drop">
-						<a class="drop-link" href="creations-personnelles.php">
+						<a class="drop-link" href="/creations-personnelles.php">
 							Créations personnelles
 						</a>
 					</li>
@@ -158,12 +158,12 @@
 							</span>
 						</a>
 						<ul class="drop-menu bottom-right">
-							<li><a href="qui-suis-je.php#histoire">Mon histoire</a></li>
-							<li><a href="qui-suis-je.php#cv">Mon CV</a></li>
+							<li><a href="/qui-suis-je.php#histoire">Mon histoire</a></li>
+							<li><a href="/qui-suis-je.php#cv">Mon CV</a></li>
 						</ul>
 					</li>
 					<li class="drop">
-						<a class="drop-link" href="contact.php">
+						<a class="drop-link" href="/contact.php">
 							Contact
 						</a>
 					</li>

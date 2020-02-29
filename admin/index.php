@@ -16,8 +16,8 @@
 				<div class="card-header">
 					<i class="fa fa-fw fa-globe"></i><strong>Administration</strong>
         </div>
-        <a href="creations/index.php" class="btn btn-light">Edit Creations</a>
-        <a href="pages/index.php" class="btn btn-light">Edit Pages</a>
+        <a href="/admin/creations/index.php" class="btn btn-light">Edit Creations</a>
+        <a href="/admin/pages/index.php" class="btn btn-light">Edit Pages</a>
       </div>
 		</div>
     
