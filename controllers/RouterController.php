@@ -41,6 +41,9 @@
                 case 'qui-suis-je' :
                     $title .= "Qui suis-je ?";
                     break;
+                default :
+                    $title .= "404";
+                    break;
             }
 
             echo $title;
@@ -70,6 +73,9 @@
                     break;
                 case 'qui-suis-je' :
                     echo $this->repository->getPageContent("qui-suis-je");
+                    break;
+                default :
+                    require_once("views/error.php");
                     break;
             }
         }
