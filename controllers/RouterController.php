@@ -23,6 +23,7 @@
                 case '' :
                 case '/' :
                 case 'index' :
+                case 'index.php' :
                     $title .= "Acceuil";
                     break;
                 case 'ateliers' :
@@ -47,12 +48,12 @@
 
         public function getContent()
         {
-            echo "<script>alert('');</script>";
             switch ($this->currentPage)
             {
                 case '' :
                 case '/' :
                 case 'index' :
+                case 'index.php' :
                     echo $this->repository->getPageContent("home");
                     break;
                 case 'ateliers' :

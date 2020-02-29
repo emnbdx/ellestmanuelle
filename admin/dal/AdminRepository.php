@@ -1,5 +1,5 @@
 <?php
-    require_once("config.php");
+    require_once("../../config.php");
 
     class AdminRepository
     {   
@@ -15,7 +15,7 @@
          */
         public function __construct()
         {
-            $this->connection = new PDO(
+            $this->pdo = new PDO(
                 "mysql:host=" . Config::$DBURL . ";dbname=" . Config::$DBNAME, 
                 Config::$DBUSER,
                 Config::$DBPASSWORD
