@@ -187,17 +187,6 @@
     });
     // End Fancybox
 
-    /*Coming Soon Page*/
-    $('#clock').countdown('2020/01/21').on('update.countdown', function(event) {
-        var $this = $(this).html(event.strftime(''
-        + '<p><span class="time">%-m</span> month%!m </p>'
-        + '<p><span class="time">%d</span> day%!d </p>'
-        + '<p><span class="time">%H</span> hours </p>'
-        + '<p><span class="time">%M</span> mins </p>'
-        + '<p><span class="time">%S</span> secs </p>'));
-    });
-    /*End Coming Soon Page*/
-
     /* Video*/
     $.fn.bmdIframe = function( options ) {
         var self = this;
