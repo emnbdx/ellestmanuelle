@@ -100,7 +100,7 @@
 				<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Browse Creations</a>
 			</div>
 			<div class="card-body">				
-				<div class="col-sm-6">
+				<div class="col-12">
 					<form method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>Name <span class="text-danger">*</span></label>
@@ -119,7 +119,7 @@
 								{
 							?>
 								<br/>
-								<img src="../../images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" />
+								<img src="../../images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" width="300px" />
 							<?php
 								} 
 							?>
@@ -134,7 +134,7 @@
 								{
 							?>
 								<br/>
-								<img src="../../images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" />
+								<img src="../../images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" width="300px" />
 							<?php
 								} 
 							?>
