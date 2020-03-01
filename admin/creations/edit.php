@@ -112,10 +112,13 @@
 						</div>
 						<div class="form-group">
 							<label>Picture <span class="text-danger">*</span></label>
+							<br/>
+							<i>For best display 750px * 1030px</i>
 							<?php 
 								if ($creation['picture'] != "")
 								{
 							?>
+								<br/>
 								<img src="../../images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" />
 							<?php
 								} 
@@ -124,10 +127,13 @@
 						</div>
 						<div class="form-group">
 							<label>Picture 2</label>
+							<br/>
+							<i>For best display 750px * 1030px</i>
 							<?php 
 								if ($creation['picture2'] != "")
 								{
 							?>
+								<br/>
 								<img src="../../images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" />
 							<?php
 								} 

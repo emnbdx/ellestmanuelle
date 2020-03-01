@@ -113,10 +113,14 @@
 							</div>
 							<div class="form-group">
 								<label>Picture <span class="text-danger">*</span></label>
+								<br/>
+								<i>For best display 750px * 1030px</i>
 								<input type="file" class="tel form-control" name="picture" id="picture" required>
 							</div>
 							<div class="form-group">
 								<label>Picture 2</label>
+								<br/>
+								<i>For best display 750px * 1030px</i>
 								<input type="file" class="tel form-control" name="picture2" id="picture2">
 							</div>
 							<div class="form-group">
