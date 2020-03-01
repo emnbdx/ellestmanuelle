@@ -39,12 +39,10 @@
     <link rel="stylesheet" type="text/css" href="vendor/revolution/css/navigation.css">
     <!-- fancybox-master Library -->
     <link rel="stylesheet" type="text/css" href="vendor/fancybox-master/css/jquery.fancybox.min.css">
-    <!-- Audio Library-->
-    <link rel="stylesheet" href="vendor/mejs/mediaelementplayer.css">
     <!-- noUiSlider Library -->
     <link rel="stylesheet" type="text/css" href="vendor/nouislider/css/nouislider.css">
     <!-- Main Style Css -->
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
 </head>
 <body>
 
@@ -84,10 +82,6 @@
 	<!-- Google Map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmXgQ65zpsjsEAfNPP9mBAz-5zjnIZBw"></script>
 	<script src="js/theme-map.js"></script>
-	<!-- Countdown Library -->
-	<script src="vendor/countdown/jquery.countdown.min.js"></script>
-	<!-- Audio Library-->
-	<script src="vendor/mejs/mediaelement-and-player.min.js"></script>
 	<!-- noUiSlider Library -->
 	<script type="text/javascript" src="vendor/nouislider/js/nouislider.js"></script>
 	<!-- Form -->
