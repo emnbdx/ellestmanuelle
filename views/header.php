@@ -1,5 +1,5 @@
 <?php 
-	include("controllers/HeaderController"); 
+	include("controllers/HeaderController.php"); 
 
 	$headerController = new HeaderController();
 ?>
