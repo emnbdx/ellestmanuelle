@@ -1,5 +1,5 @@
 
-<div class="page-content">
+<div>
 	<!-- Page Not Found Section -->
 	<section class="page-not-found" style="background-image: url(images/page-not-found-bg.jpg)">
 		<div class="page-detail">
@@ -7,7 +7,7 @@
 				<h2>Oops!</h2>
 				<h2>Page not found!</h2>
 				<p>Page you are looking for does not exits.</p>
-				<a href="index" class="au-btn-white btn-small">Back to Home Page<i class="zmdi zmdi-arrow-right"></i></a>
+				<a href="/" class="au-btn-white btn-small">Back to Home Page<i class="zmdi zmdi-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>

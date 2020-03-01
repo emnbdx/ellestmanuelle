@@ -15,6 +15,24 @@
             $this->currentPage = end($request);
         }
 
+        private function needHeaderFooter()
+        {
+            switch ($this->currentPage)
+            {
+                case '' :
+                case '/' :
+                case 'index' :
+                case 'index.php' :
+                case 'ateliers' :
+                case 'contact' :
+                case 'illustrations' :
+                case 'qui-suis-je' :
+                    return true;
+                default :
+                    return false;
+            }
+        }
+
         public function getTitle() 
         {
             $title = "Ellestmanuelle | ";
@@ -51,6 +69,9 @@
 
         public function getContent()
         {
+            if ($this->needHeaderFooter())
+                require_once("views/header.php");
+            
             switch ($this->currentPage)
             {
                 case '' :
@@ -78,6 +99,9 @@
                     require_once("views/error.php");
                     break;
             }
+
+		    if ($this->needHeaderFooter())
+                require_once("views/footer.php");
         }
     }
 ?>

@@ -20,7 +20,7 @@
 						
 						<ul>
 							<li class="menu-item">
-								<a href=""<?php $headerController->addCurrentClass(""); $headerController->addCurrentClass("index")?>>
+								<a href="/"<?php $headerController->addCurrentClass(""); $headerController->addCurrentClass("index")?>>
 								Accueil
 								</a>
 							</li>
@@ -101,7 +101,7 @@
 			<div class="au-navbar-menu">
 				<ul>
 					<li class="drop">
-						<a class="drop-link" href="">
+						<a class="drop-link" href="/">
 							Accueil
 						</a>
 					</li>

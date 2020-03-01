@@ -27,3 +27,5 @@
 		</div>
 	</div>
 </footer>
+
+<a href="#" id="back-to-top" style="display: none;"></a>
