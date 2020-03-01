@@ -25,11 +25,11 @@
     if (mail(Config::$MAIL_HOST, Config::$MAIL_TITLE, $message, $headers))
     {
         $serialized_data = '{"type":"success", "message":"Votre message a bien été envoyé"}';
-        return $serialized_data;
+        echo $serialized_data;
     }
     else
     {
         $serialized_data = '{"type":"danger", "message":"Erreur lors de l\'envoie du message, merci de reessayer plus tard"}';
-        return $serialized_data;
+        echo $serialized_data;
     }
 ?>

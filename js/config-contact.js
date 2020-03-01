@@ -24,7 +24,7 @@
 
             that.on('submit', function (e) {
 
-                var url = "includes/contact-form.php";
+                var url = "controllers/ContactController.php";
 
 
 
