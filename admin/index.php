@@ -16,8 +16,11 @@
 				<div class="card-header">
 					<i class="fa fa-fw fa-globe"></i><strong>Administration</strong>
         </div>
-        <a href="/admin/creations/index.php" class="btn btn-light">Edit Creations</a>
-        <a href="/admin/pages/index.php" class="btn btn-light">Edit Pages</a>
+        <a href="/admin/creations/index.php" class="btn btn-light">Manage Creations</a>
+        <a href="/admin/themes/index.php" class="btn btn-light">Manage Themes</a>
+        <a href="/admin/techniques/index.php" class="btn btn-light">Manage Techniques</a>
+        <a href="/admin/pictures/index.php" class="btn btn-light">Manage Pictures</a>
+        <a href="/admin/pages/index.php" class="btn btn-light">Manage Pages</a>
       </div>
 		</div>
     

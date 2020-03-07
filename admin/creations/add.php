@@ -91,7 +91,7 @@
 				}
 				else if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up")
 				{
-					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User phone is mandatory field!</div>';
+					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Picture is mandatory field!</div>';
 				}
 			?>
 

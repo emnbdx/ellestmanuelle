@@ -163,9 +163,16 @@ INSERT INTO `page` (`id`, `name`, `content`) VALUES
 (3, 'illustrations', ''),
 (4, 'qui-suis-je', '')
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `technique`
+-- Table structure for table `picture`
 --
+
+CREATE TABLE `picture` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -204,6 +211,12 @@ ALTER TABLE `page`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `picture`
+--
+ALTER TABLE `picture`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -227,6 +240,11 @@ ALTER TABLE `theme`
 --
 ALTER TABLE `page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `picture`
+--
+ALTER TABLE `picture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

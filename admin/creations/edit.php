@@ -119,7 +119,7 @@
 								{
 							?>
 								<br/>
-								<img src="../../images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" width="300px" />
+								<img src="/images/uploads/<?php echo $creation['picture']; ?>" class="img-thumbnail" width="300px" />
 							<?php
 								} 
 							?>
@@ -134,7 +134,7 @@
 								{
 							?>
 								<br/>
-								<img src="../../images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" width="300px" />
+								<img src="/images/uploads/<?php echo $creation['picture2']; ?>" class="img-thumbnail" width="300px" />
 							<?php
 								} 
 							?>

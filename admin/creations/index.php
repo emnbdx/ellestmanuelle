@@ -13,14 +13,8 @@
 	<body>
 		<?php
 			include_once('../dal/AdminRepository.php');
-			$repo = new AdminRepository();
-			$condition = '';
-			if (isset($_REQUEST['name']) && $_REQUEST['name']!="")
-			{
-				$condition	.=	' AND name LIKE "%'.$_REQUEST['name'].'%" ';
-			}
-			
-			$creations = $repo->getAllRecords('creation', '*', $condition, 'ORDER BY id DESC');
+			$repo = new AdminRepository();			
+			$creations = $repo->getAllRecords('creation', '*', '', 'ORDER BY id DESC');
 		?>
 			<div class="container">
 			<div class="card">
@@ -48,27 +42,6 @@
 							echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> There is some thing wrong <strong>Please try again!</strong></div>';
 						}
 					?>
-					<div class="col-sm-12">
-						<h5 class="card-title"><i class="fa fa-fw fa-search"></i> Find Creation</h5>
-						<form method="get">
-							<div class="row">
-								<div class="col-sm-2">
-									<div class="form-group">
-										<label>Name</label>
-										<input type="text" name="name" id="name" class="form-control" value="<?php echo isset($_REQUEST['name'])?$_REQUEST['name']:''?>" placeholder="Enter name">
-									</div>
-								</div>
-								<div class="col-sm-2">
-									<div class="form-group">
-										<label>&nbsp;</label>
-										<div>
-											<button type="submit" name="submit" value="search" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> Search</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
 				</div>
 			</div>
 
