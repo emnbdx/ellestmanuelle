@@ -1,11 +1,11 @@
 <div class="page-content">
 	<!-- Breadcrumb Section -->
-	<section class="breadcrumb-contact-us breadcrumb-section section-box" style="background-image: url(images/contact-us-bc.jpg)">
+	<section class="breadcrumb-contact-us breadcrumb-section breadcrumb-section-white section-box" style="background-image: url(/images/breadcrumb-contact.jpg)">
 		<div class="container">
 				<div class="breadcrumb-inner">
 					<h1>Contact</h1>
 					<ul class="breadcrumbs">
-						<li><a class="breadcrumbs-1" href="index.html">Accueil</a></li>
+						<li><a class="breadcrumbs-1" href="/">Accueil</a></li>
 						<li><p class="breadcrumbs-2">Contact</p></li>
 					</ul>
 				</div>	
@@ -18,6 +18,13 @@
 				<div class="contact-content">
 					<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+							<h5>
+								<b>Parce que rien ne vaut la rencontre et l’échange, ensemble, étudions votre demande.</b>
+								<br/>
+								Je vous laisse ici me décrire brièvement vos besoins et je vous contacte au plus vite pour trouver un terrain d’entente.
+</h5>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 							<div class="quote-form">
 								<form class="form-contact js-contact-form" method="POST" action="controllers/ContactController.php">
 									<div class="form-input">
@@ -25,6 +32,9 @@
 									</div>
 									<div class="form-input">
 										<input type="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" name="email" placeholder="Email">
+									</div>
+									<div class="form-input">
+										<input type="tel" required name="tel" placeholder="Téléphone">
 									</div>
 									<div class="form-textarea">
 										<textarea name="message" required placeholder="Message"></textarea>
@@ -36,43 +46,9 @@
 								</form>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-							<div class="contact-details">
-								<h2 class="special-heading">Contact Details</h2>
-								<div class="contact-info">
-									<div class="contact-inner">
-										<h3>NewYork</h3>
-										<p><i class="zmdi zmdi-map"></i> No 40 Baria Sreet 133/2 NewYork 13589</p>
-										<p class="center"><i class="zmdi zmdi-email"></i> kathryn-92@example.com</p>
-										<p><a href="tel:8494904283"><i class="zmdi zmdi-phone"></i> (849) 490 4283</a></p>
-									</div>
-									<div class="contact-inner">
-										<h3>Barcelona</h3>
-										<p><i class="zmdi zmdi-map"></i> 184 Main Collins Street West Barselona 23765</p>
-										<p class="center"><i class="zmdi zmdi-email"></i> steven82@example.com</p>
-										<p><a href="tel:5273766381"><i class="zmdi zmdi-phone"></i> (527) 376 6381</a></p>
-									</div>
-								</div>
-								<div class="socials">
-									<a href="#"><i class="zmdi zmdi-facebook"></i></a>
-									<a href="#"><i class="zmdi zmdi-twitter"></i></a>
-									<a href="#"><i class="zmdi zmdi-tumblr"></i></a>
-									<a href="#"><i class="zmdi zmdi-instagram"></i></a>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 		</div>
 	</section>
 	<!-- End Contact Section -->
-	<!-- Map Section  -->
-	<section class="map-section">
-			<div class="google-map-section">
-				<div class="map-wrapper js-google-map" data-makericon="images/icons/map-icon.png" data-makers='[["Novas", "Now that you visited our website,<br> how about checking out our office too?", 40.786813, -73.834441]]'>
-		            <div class="map__holder js-map-holder" id="map"></div>
-		        </div>
-			</div>
-	</section>
-	<!-- End Map Section -->
 </div>

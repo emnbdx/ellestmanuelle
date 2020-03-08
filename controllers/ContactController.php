@@ -11,13 +11,18 @@
     else
         $email = "unknown";
 
+    if (isset($_POST['tel']))
+        $tel = $_POST['tel'];
+    else
+        $tel = "unknown";
+
     if (isset($_POST['message']))
         $message = nl2br($_POST['message']);
     else
         $message = "unknown";
 
     $from = $email;
-    $message = '<b>Nom:</b>'.$name. '<br/><b>Email:</b>'.$email.'<br/><p>'.$message.'</p>';
+    $message = '<b>Nom:</b>'.$name.'<br/><b>Email:</b>'.$email.'<br/><b>Téléphone:</b>'.$tel.'<br/><p>'.$message.'</p>';
     $headers = "From: $from\n";
     $headers .= "MIME-Version: 1.0\n";
     $headers .= "Content-type: text/html; charset=iso-8859-1\n";

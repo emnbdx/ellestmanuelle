@@ -68,9 +68,6 @@
 	<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
 	<!-- fancybox-master Library -->
 	<script type="text/javascript" src="vendor/fancybox-master/js/jquery.fancybox.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmXgQ65zpsjsEAfNPP9mBAz-5zjnIZBw"></script>
-	<script src="js/theme-map.js"></script>
 	<!-- noUiSlider Library -->
 	<script type="text/javascript" src="vendor/nouislider/js/nouislider.js"></script>
 	<!-- Form -->

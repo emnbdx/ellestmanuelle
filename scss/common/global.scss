@@ -300,6 +300,25 @@ ul {
         }
     } 
 }
+.breadcrumb-section-white {
+    .breadcrumb-inner {
+        h1 {
+            color: white;
+        }
+        .breadcrumbs {
+            color: white;
+            .breadcrumbs-1 {
+                color: white;
+                &:after {
+                    color: white;
+                }
+                &:hover {
+                    color: grey;
+                }
+            }
+        }
+    } 
+}
 
 /* Back To Top Button */
 #back-to-top {
