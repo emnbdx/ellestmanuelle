@@ -21,7 +21,7 @@
 				font-size: 48px;
 			}
 			.subtitle {
-				font-size: 36px;
+				font-size: 26px;
 			}
     	}
 	    .main-menu {
@@ -104,17 +104,6 @@
 	                    	top: 50%;
 	                    	@include transform(translateY(-50%));
 	                    	right: 30px;
-	                    }
-	                    &:before {
-	                    	position: absolute;
-	                    	content: '';
-	                    	width: 5px;
-	                    	height: 1px;
-	                    	background: #333;
-	                    	top: 50%;
-	                    	@include transform(translateY(-50%));
-	                    	left: 30px;
-	                    	opacity: 0;
 	                    }
 	                    &:hover {
 	                    	padding-left: 45px;
@@ -526,7 +515,7 @@
 			font-size: 36px;
 		}
 		.subtitle {
-			font-size: 34px;
+			font-size: 24px;
 		}
     }
     /* Hamburger Button */
