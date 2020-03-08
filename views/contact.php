@@ -22,7 +22,7 @@
 								<b>Parce que rien ne vaut la rencontre et l’échange, ensemble, étudions votre demande.</b>
 								<br/>
 								Je vous laisse ici me décrire brièvement vos besoins et je vous contacte au plus vite pour trouver un terrain d’entente.
-</h5>
+							</h5>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 							<div class="quote-form">
