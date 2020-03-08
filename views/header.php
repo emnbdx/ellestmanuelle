@@ -12,7 +12,7 @@
 				<div class="menu-desktop-inner">
 					<!-- Logo -->
 					<div class="logo">
-						<p class="title">Ellestmanuelle</p>
+						<p class="title">ellestmanuelle</p>
 						<p class="subtitle">vous l’êtes aussi</p>
 					</div>
 					<!-- Main Menu -->
@@ -26,25 +26,25 @@
 							</li>
 							<li class="menu-item">
 								<a href="#"<?php $headerController->addCurrentClass("ateliers"); $headerController->addCurrentClass("illustrations");?>>
-								Prestations / intervention
+								Prestations / interventions
 								</a>
 								<ul class="sub-menu">
 									<li>
 										<a href="ateliers">
-											Animation d'/ateliers
+											Animation d'ateliers
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="/ateliers#philosophie">Ma philosophie d’animation/ma plus value</a></li>
+											<li><a href="/ateliers#philosophie">Ma philosophie d’animation</a></li>
 											<li><a href="/ateliers#prestations">Types de prestations</a></li>
 											<li><a href="/ateliers#tarifs">Tarifs</a></li>
 											<li><a href="/ateliers#catalogue">Catalogue</a></li>
-											<li><a href="/ateliers#reference">Ils m’ont fait confiance</a></li>
+											<li><a href="/ateliers#reference">Les avis des participants</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="illustrations">
-											Réalisation d'/illustrations
+											Réalisation d'illustrations
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
@@ -87,7 +87,7 @@
 		<!-- Logo And Hamburger Button -->
 		<div class="mobile-top-header">
 			<div class="logo-mobile">
-				<p class="title">ellestmanuelle.fr</p>
+				<p class="title">ellestmanuelle</p>
 				<p class="subtitle">vous l’êtes aussi</p>
 			</div>
 			<button class="hamburger hamburger--spin hidden-tablet-landscape-up" id="toggle-icon">
@@ -107,7 +107,7 @@
 					</li>
 					<li class="drop">							
 						<a class="drop-link" href="#">
-							Prestations / intervention
+							Prestations / interventions
 							<span class="arrow">
 								<i class="zmdi zmdi-chevron-down"></i>
 							</span>
@@ -121,11 +121,11 @@
 								</span>
 								</a>
 								<ul class="drop-menu bottom-right">
-									<li><a class="drop-menu-inner" href="/ateliers#philosophie">Ma philosophie d’animation/ma plus value</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers#philosophie">Ma philosophie d’animation</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#prestations">Types de prestations</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#tarifs">Tarifs</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#catalogue">Catalogue</a></li>
-									<li><a class="drop-menu-inner" href="/ateliers#reference">Ils m’ont fait confiance</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers#reference">Les avis des participants</a></li>
 								</ul>
 							</li>
 							<li class="drop">
