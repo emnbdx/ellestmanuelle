@@ -31,7 +31,7 @@
 								<ul class="sub-menu">
 									<li>
 										<a href="ateliers">
-											Animation d'ateliers
+											Animation d'ateliers créations
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
@@ -115,7 +115,7 @@
 						<ul class="drop-menu bottom-right">
 							<li class="drop">
 								<a class="drop-link" href="#">
-								Animation d'ateliers
+								Animation d'ateliers créations
 								<span class="arrow">
 									<i class="zmdi zmdi-chevron-down"></i>
 								</span>
