@@ -31,12 +31,12 @@
 
 <div class="page-content">
 	<!-- Breadcrumb Section -->
-	<section class="breadcrumb-contact-us breadcrumb-section section-box" style="background-image: url(images/contact-us-bc.jpg)">
+	<section class="breadcrumb-section breadcrumb-section-white section-box" style="background-image: url(/images/breadcrumb-creations-personnelles.jpg)">
 		<div class="container">
 			<div class="breadcrumb-inner">
 				<h1>Créations personnelles</h1>
 				<ul class="breadcrumbs">
-					<li><a class="breadcrumbs-1" href="index.html">Accueil</a></li>
+					<li><a class="breadcrumbs-1" href="/">Accueil</a></li>
 					<li><p class="breadcrumbs-2">Créations personnelles</p></li>
 				</ul>
 			</div>	

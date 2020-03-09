@@ -1,6 +1,6 @@
 <div class="page-content">
 	<!-- Breadcrumb Section -->
-	<section class="breadcrumb-contact-us breadcrumb-section breadcrumb-section-white section-box" style="background-image: url(/images/breadcrumb-contact.jpg)">
+	<section class="breadcrumb-section breadcrumb-section-white section-box" style="background-image: url(/images/breadcrumb-contact.jpg)">
 		<div class="container">
 				<div class="breadcrumb-inner">
 					<h1>Contact</h1>
