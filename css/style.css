@@ -1892,8 +1892,7 @@ textarea:-moz-placeholder {
   -ms-transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .categories-hp-1 .categories-content .categories-detail .product {
-  position: absolute;
-  left: 0;
+  text-align: center;
   bottom: 20px;
   background: #fff;
 }
