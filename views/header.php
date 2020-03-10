@@ -39,7 +39,6 @@
 											<li><a href="/ateliers#prestations">Types de prestations</a></li>
 											<li><a href="/ateliers#tarifs">Tarifs</a></li>
 											<li><a href="/ateliers#catalogue">Catalogue</a></li>
-											<li><a href="/ateliers#reference">Les avis des participants</a></li>
 										</ul>
 									</li>
 									<li>
@@ -125,7 +124,6 @@
 									<li><a class="drop-menu-inner" href="/ateliers#prestations">Types de prestations</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#tarifs">Tarifs</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#catalogue">Catalogue</a></li>
-									<li><a class="drop-menu-inner" href="/ateliers#reference">Les avis des participants</a></li>
 								</ul>
 							</li>
 							<li class="drop">
