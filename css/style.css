@@ -677,7 +677,7 @@ textarea:-moz-placeholder {
   font-size: 48px;
 }
 .header-hp-1 .menu-desktop-inner .logo .title span {
-  color: lightgray;
+  color: #aaa;
 }
 .header-hp-1 .menu-desktop-inner .logo .subtitle {
   font-size: 26px;
@@ -1212,7 +1212,7 @@ textarea:-moz-placeholder {
   font-size: 36px;
 }
 .mobile-top-header .logo-mobile .title span {
-  color: lightgray;
+  color: #aaa;
 }
 .mobile-top-header .logo-mobile .subtitle {
   font-size: 24px;
