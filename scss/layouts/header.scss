@@ -19,6 +19,9 @@
 			font-family: 'Playlist Script', sans-serif;
 			.title {
 				font-size: 48px;
+				span {
+					color: lightgray;
+				}
 			}
 			.subtitle {
 				font-size: 26px;
@@ -513,6 +516,9 @@
 		font-family: 'Playlist Script', sans-serif;
 		.title {
 			font-size: 36px;
+			span {
+				color: lightgray;
+			}
 		}
 		.subtitle {
 			font-size: 24px;

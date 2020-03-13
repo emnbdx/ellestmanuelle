@@ -12,7 +12,7 @@
 				<div class="menu-desktop-inner">
 					<!-- Logo -->
 					<div class="logo">
-						<p class="title">ellestmanuelle</p>
+						<p class="title">ell<span>est</span>manuelle</p>
 						<p class="subtitle">vous l’êtes aussi</p>
 					</div>
 					<!-- Main Menu -->
@@ -87,7 +87,7 @@
 		<!-- Logo And Hamburger Button -->
 		<div class="mobile-top-header">
 			<div class="logo-mobile">
-				<p class="title">ellestmanuelle</p>
+				<p class="title">ell<span>est</span>manuelle</p>
 				<p class="subtitle">vous l’êtes aussi</p>
 			</div>
 			<button class="hamburger hamburger--spin hidden-tablet-landscape-up" id="toggle-icon">

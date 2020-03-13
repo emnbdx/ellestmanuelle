@@ -676,6 +676,9 @@ textarea:-moz-placeholder {
 .header-hp-1 .menu-desktop-inner .logo .title {
   font-size: 48px;
 }
+.header-hp-1 .menu-desktop-inner .logo .title span {
+  color: lightgray;
+}
 .header-hp-1 .menu-desktop-inner .logo .subtitle {
   font-size: 26px;
 }
@@ -1207,6 +1210,9 @@ textarea:-moz-placeholder {
 }
 .mobile-top-header .logo-mobile .title {
   font-size: 36px;
+}
+.mobile-top-header .logo-mobile .title span {
+  color: lightgray;
 }
 .mobile-top-header .logo-mobile .subtitle {
   font-size: 24px;
