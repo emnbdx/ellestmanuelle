@@ -74,5 +74,15 @@
 	<script src="js/config-contact.js"></script>
 	<!-- Main Js -->
 	<script src="js/custom.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160598401-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-160598401-1');
+	</script>
 </body>
 </html>
