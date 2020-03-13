@@ -1,5 +1,12 @@
 <?php
     require_once("../config.php");
+    require_once("../PHPMailer/src/PHPMailer.php");
+    require_once("../PHPMailer/src/SMTP.php");
+    require_once("../PHPMailer/src/Exception.php");
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
 
     if (isset($_POST['name']))
         $name = $_POST['name'];
@@ -21,20 +28,37 @@
     else
         $message = "unknown";
 
-    $from = $email;
-    $message = '<b>Nom:</b>'.$name.'<br/><b>Email:</b>'.$email.'<br/><b>Téléphone:</b>'.$tel.'<br/><p>'.$message.'</p>';
-    $headers = "From: $from\n";
-    $headers .= "MIME-Version: 1.0\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+    // Instantiation and passing `true` enables exceptions
+    $mail = new PHPMailer(true);
 
-    if (mail(Config::$MAIL_HOST, Config::$MAIL_TITLE, $message, $headers))
-    {
+    try {
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_OFF;
+        $mail->isSMTP();
+        $mail->Host       = Config::$MAIL_HOST;
+        $mail->SMTPAuth   = true;
+        $mail->Username   = Config::$MAIL_LOGIN;
+        $mail->Password   = Config::$MAIL_PASSWORD;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
+
+        // To load the French version
+        $mail->setLanguage('fr', '/PHPMailer-6.1.4/language/');
+        $mail->CharSet    = PHPMailer::CHARSET_UTF8;
+
+        //Recipients
+        $mail->setFrom($email);
+        $mail->addAddress(Config::$MAIL_LOGIN);
+        
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = "Message depuis le site";
+        $mail->Body    = '<b>Nom: </b>'.$name.'<br/><b>Téléphone: </b>'.$tel.'<br/><p>'.$message.'</p>';
+        
+        $mail->send();
         $serialized_data = '{"type":"success", "message":"Votre message a bien été envoyé"}';
-        echo $serialized_data;
+    } catch (Exception $e) {
+        $serialized_data = '{"type":"danger", "message":"Erreur lors de l\'envoi de votre message: {'.$mail->ErrorInfo.'"}';
     }
-    else
-    {
-        $serialized_data = '{"type":"danger", "message":"Erreur lors de l\'envoie du message, merci de reessayer plus tard"}';
-        echo $serialized_data;
-    }
+    echo $serialized_data;
 ?>
