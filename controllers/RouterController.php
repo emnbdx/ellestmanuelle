@@ -42,10 +42,10 @@
                 case '/' :
                 case 'index' :
                 case 'index.php' :
-                    $title .= "Acceuil";
+                    $title .= "Accueil : créations artistiques et artisanales / illustrations / interventions ateliers";
                     break;
                 case 'ateliers' :
-                    $title .= "Ateliers";
+                    $title .= "Animations d'ateliers créations";
                     break;
                 case 'contact' :
                     $title .= "Contact";
@@ -54,7 +54,7 @@
                     $title .= "Création Personnelles";
                     break;
                 case 'illustrations' :
-                    $title .= "Illustrations";
+                    $title .= "Réalisation d'illustrations";
                     break;
                 case 'qui-suis-je' :
                     $title .= "Qui suis-je ?";

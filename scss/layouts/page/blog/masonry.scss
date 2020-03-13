@@ -1,6 +1,12 @@
 /* Blog Section */
 .blog-masonry-section.section-box {
-	padding: 120px 0 100px;
+	padding: 60px 0 0 0;
+	h2 {
+		padding: 10px 0;
+	}
+	h3 {
+		padding: 10px 0;
+	}
 }
 .blog-masonry-section {
 	.blog-content {

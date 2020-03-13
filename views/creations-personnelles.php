@@ -48,6 +48,15 @@
 		<div class="container">
 			<div class="featured-content woocommerce">
 				<div class="row">
+					<div class="col-12 text-center">
+						Vous souhaitez une de ces créations ? <a href="/contact">Contactez-moi</a>
+						<br/>
+						Bientôt une boutique en ligne...
+						<br/>
+						<br/>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
 						<div class="widget-area">
 							<!-- Search -->
