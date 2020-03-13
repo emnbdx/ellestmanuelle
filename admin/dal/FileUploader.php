@@ -60,7 +60,6 @@
             }
             else // if everything is ok, try to upload file
             {
-                echo "move ".$this->file["tmp_name"]." to ".$this->target_file;
                 if (move_uploaded_file($this->file["tmp_name"], $this->target_file))
                 {
                     return "";
