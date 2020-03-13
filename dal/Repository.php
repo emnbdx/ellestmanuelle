@@ -51,7 +51,7 @@
 
         public function getCreationCount($search, $techniqueId, $themeId)
         {
-            $sql = "SELECT count(*) as nb from tag t";
+            $sql = "SELECT count(distinct t.id_creation) as nb from tag t";
             if($search !== "")
             {
                 $sql .= " INNER JOIN creation c on c.id = t.id_creation and c.name like '%$search%'";
