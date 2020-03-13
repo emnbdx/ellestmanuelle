@@ -1,5 +1,6 @@
-(function($) { 
 "use strict"; 
+
+(function($) { 
     /*Images Loader*/
         $(window).on('load', function() {
         $('.images-preloader').fadeOut();
