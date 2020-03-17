@@ -203,10 +203,8 @@
 				    }
 				}
 				.woocommerce-loop-product__title {
-					position: absolute;
-				    left: 20px;
-				    bottom: 52px;
-				    a {
+					text-align: center;
+					a {
 				    	&:hover {
 				    		color: #333;
 				    	}

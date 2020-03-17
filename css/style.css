@@ -2011,9 +2011,7 @@ textarea:-moz-placeholder {
   border: none;
 }
 .featured-hp-1 .content-area .woocommerce-LoopProduct-link .product-image .woocommerce-loop-product__title {
-  position: absolute;
-  left: 20px;
-  bottom: 52px;
+  text-align: center;
 }
 .featured-hp-1 .content-area .woocommerce-LoopProduct-link .product-image .woocommerce-loop-product__title a:hover {
   color: #333;

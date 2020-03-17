@@ -163,20 +163,14 @@
 				echo "	<div class=\"product type-product\">";
 				echo "		<div class=\"woocommerce-LoopProduct-link\">";
 				echo "			<div class=\"product-image\">";
-				echo "				<a href=\"#\" class=\"wp-post-image\">";
-				echo "					<img class=\"image-cover\" src=\"/images/uploads/" . $product->picture . "\" alt=\"product\">";
-				echo "					<img class=\"image-secondary\" src=\"/images/uploads/" . $product->picture2 . "\" alt=\"product\">";
-				echo "				</a>";
-				echo "				<div class=\"yith-wcwl-add-button show\">";
-				echo "					</div>";
+				echo "				<div class=\"wp-post-image\">";
+				echo "					<img class=\"image-cover\" src=\"/images/uploads/" . $product->picture . "\" alt=\"image\">";
+				if($product->picture2 != "" && $product->picture2 != "hp-1-featured-11.jpg")
+				{
+					echo "					<img class=\"image-secondary\" src=\"/images/uploads/" . $product->picture2 . "\" alt=\"product\">";
+				}
+				echo "				</div>";
 				echo "				<h5 class=\"woocommerce-loop-product__title\"><a href=\"#\">" . $product->name . "</a></h5>";
-				echo "				<span class=\"price\">";
-				echo "					<ins>";
-				echo "						<span class=\"woocommerce-Price-amount amount\">";
-				echo "							" . $product->description;
-				echo "						</span>";
-				echo "					</ins>";
-				echo "				</span>";
 				echo "			</div>";
 				echo "		</div>";
 				echo "	</div>";
