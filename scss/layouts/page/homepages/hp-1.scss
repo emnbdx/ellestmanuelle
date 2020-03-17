@@ -365,8 +365,8 @@
 			}
 			.owl-nav {
 				position: absolute;
-				width: 42%;
-			    left: 42%;
+				width: 60%;
+			    left: 20%;
 			    top: 50%;
 			    @include transform(translateY(-50%));
 			    @extend display-flex;

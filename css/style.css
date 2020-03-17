@@ -2179,8 +2179,8 @@ textarea:-moz-placeholder {
 }
 .testimonials-hp-1 .owl-carousel.owl-theme .owl-nav {
   position: absolute;
-  width: 42%;
-  left: 42%;
+  width: 60%;
+  left: 20%;
   top: 50%;
   transform: translateY(-50%);
   -moz-transform: translateY(-50%);
