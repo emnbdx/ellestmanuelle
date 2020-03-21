@@ -20,14 +20,6 @@
         {
             $uploadOk = 1;
             
-            // Check if image file is a actual image or fake image
-            $check = getimagesize($this->file["tmp_name"]);
-            if($check === false)
-            {
-                return "File is not an image.";
-                $uploadOk = 0;
-            }
-            
             // Check if file already exists
             if (file_exists($this->target_file))
             {
@@ -39,16 +31,6 @@
             if ($this->file["size"] > Config::$UPLOADMAXSIZE)
             {
                 return "Sorry, your file is too large.";
-                $uploadOk = 0;
-            }
-
-            // Allow certain file formats
-            if ($this->imageFileType != "jpg" && 
-                $this->imageFileType != "png" && 
-                $this->imageFileType != "jpeg" &&
-                $this->imageFileType != "gif" )
-            {
-                return "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 $uploadOk = 0;
             }
 

@@ -8,20 +8,20 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<title>Ellestmanuelle | Administration images</title>
+		<title>Ellestmanuelle | Administration documents</title>
 	</head>
 	<body>
 		<?php
 			include_once('../dal/AdminRepository.php');
 			$repo = new AdminRepository();			
-			$pictures = $repo->getAllRecords('picture', '*', '', 'ORDER BY id DESC');
+			$documents = $repo->getAllRecords('document', '*', '', 'ORDER BY id DESC');
 		?>
 			<div class="container">
 			<div class="card">
 				<div class="card-header">
-					<i class="fa fa-fw fa-globe"></i><strong>Browse Pictures</strong> 
+					<i class="fa fa-fw fa-globe"></i><strong>Browse Documents</strong> 
 					<a href="/admin/index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Return to admin</a>
-					<a href="add.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Add Picture</a>
+					<a href="add.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Add Document</a>
 				</div>
 				<div class="card-body">
 					<?php
@@ -53,25 +53,45 @@
 						<tr class="bg-primary text-white">
 							<th>Id</th>
 							<th>Thumbnail</th>
-							<th>Url</th>
+							<th>Balise</th>
 							<th class="text-center">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php 
-						if (count($pictures) > 0)
+						if (count($documents) > 0)
 						{
-							foreach ($pictures as $picture)
+							foreach ($documents as $document)
 							{
 						?>
 						<tr>
-							<td><?php echo $picture['id'];?></td>
-							<td>
-								<img src="/images/uploads/<?php echo $picture['name']; ?>" class="img-thumbnail" width="200px" />
-							</td>
-							<td><?php echo "/images/uploads/" . $picture['name'];?></td>
+							<td><?php echo $document['id'];?></td>
+							<?php 
+							$file_parts = pathinfo($document['name']);
+							if($file_parts['extension'] == "jpg" ||
+								$file_parts['extension'] == "jpeg" ||
+								$file_parts['extension'] == "png" ||
+								$file_parts['extension'] == "gif")
+							{
+							?>
+								<td>
+									<img src="/images/uploads/<?php echo $document['name']; ?>" class="img-thumbnail" width="200px" />
+								</td>
+								<td><?php echo "&lt;img src=\"/images/uploads/" . $document['name'] . "\" /&gt;"; ?></td>
+							<?php
+							}
+							else 
+							{
+							?>
+								<td>
+									<a href="/images/uploads/<?php echo $document['name']; ?>" target="_blank"><?php echo $document['name']; ?></a>
+								</td>
+								<td><?php echo "&lt;a href=\"/images/uploads/" . $document['name'] . "\" target=\"_blank\"&gt;" . $document['name'] . "&lt;/a&gt;"; ?></td>
+							<?php
+							}
+							?>
 							<td align="center">
-								<a href="delete.php?delId=<?php echo $picture['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this picture?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
+								<a href="delete.php?delId=<?php echo $document['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this document?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
 							</td>
 
 						</tr>

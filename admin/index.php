@@ -19,8 +19,7 @@
         <a href="/admin/creations/index.php" class="btn btn-light">Manage Creations</a>
         <a href="/admin/themes/index.php" class="btn btn-light">Manage Themes</a>
         <a href="/admin/techniques/index.php" class="btn btn-light">Manage Techniques</a>
-        <a href="/admin/pictures/index.php" class="btn btn-light">Manage Pictures</a>
-        <a href="/admin/pages/index.php" class="btn btn-light">Manage Pages</a>
+        <a href="/admin/documents/index.php" class="btn btn-light">Manage Documents</a>
       </div>
 		</div>
     

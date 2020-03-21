@@ -5,15 +5,15 @@
 	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "")
 	{
 		extract($_REQUEST);
-		if ($_FILES["picture"]["name"] == "")
+		if ($_FILES["document"]["name"] == "")
 		{
 			header('location:'.$_SERVER['PHP_SELF'].'?msg=up');
 			exit;
 		}
 		
-		if ($_FILES["picture"]["name"] != "")
+		if ($_FILES["document"]["name"] != "")
 		{
-			$fileUploader = new FileUploader($_FILES["picture"]);
+			$fileUploader = new FileUploader($_FILES["document"]);
 			$uploadError = $fileUploader->upload();
 			if($uploadError !== "")
 			{
@@ -23,10 +23,10 @@
 		}
 
 		$data = array(
-			'name'=>$_FILES["picture"]["name"]
+			'name'=>$_FILES["document"]["name"]
 		);
 
-		$repo->insert('picture', $data);
+		$repo->insert('document', $data);
 			
 		header('location:index.php?msg=ras');
 		exit;
@@ -43,14 +43,14 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<title>Ellestmanuelle | Administration images</title>
+		<title>Ellestmanuelle | Administration documents</title>
   	</head>
   	<body>
 		<div class="container">
 			<?php
 				if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "up")
 				{
-					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Picture is mandatory field!</div>';
+					echo '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Document is mandatory field!</div>';
 				}
 				else if (isset($_REQUEST['msg']))
 				{
@@ -60,19 +60,19 @@
 
 			<div class="card">
 				<div class="card-header">
-					<i class="fa fa-fw fa-plus-circle"></i> <strong>Add Picture</strong> 
-					<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Browse Pictures</a>
+					<i class="fa fa-fw fa-plus-circle"></i> <strong>Add Document</strong> 
+					<a href="index.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Browse Documents</a>
 				</div>
 				<div class="card-body">
 					<div class="col-12">
 						<form method="post" enctype="multipart/form-data">
 							<div class="form-group">
-								<label>Picture <span class="text-danger">*</span></label>
+								<label>Document <span class="text-danger">*</span></label>
 								<br/>
-								<input type="file" class="tel form-control" name="picture" id="picture" required>
+								<input type="file" class="tel form-control" name="document" id="document" required>
 							</div>
 							<div class="form-group">
-								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> Add Picture</button>
+								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> Add Document</button>
 							</div>
 						</form>
 					</div>
