@@ -28,6 +28,12 @@ a {
         outline: 0;
     }
 }
+section a {
+    font-weight: 600;
+    &:hover {
+        text-decoration: underline;
+    }
+}
 a img {
     border: none;
 }
@@ -287,14 +293,6 @@ ul {
             }
             .breadcrumbs-1 {
                 color: #666;
-                &:after {
-                    content: "/";
-                    margin: 0 11px;
-                    color: #666;
-                }
-                &:hover {
-                    color: #333;
-                }
             }
         }
     } 
@@ -308,12 +306,6 @@ ul {
             color: white;
             .breadcrumbs-1 {
                 color: white;
-                &:after {
-                    color: white;
-                }
-                &:hover {
-                    color: grey;
-                }
             }
         }
     } 

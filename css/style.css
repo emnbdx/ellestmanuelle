@@ -61,6 +61,13 @@ a:focus, a:active {
   outline: 0;
 }
 
+section a {
+  font-weight: 600;
+}
+section a:hover {
+  text-decoration: underline;
+}
+
 a img {
   border: none;
 }
@@ -397,14 +404,6 @@ ul {
 .breadcrumb-section .breadcrumb-inner .breadcrumbs .breadcrumbs-1 {
   color: #666;
 }
-.breadcrumb-section .breadcrumb-inner .breadcrumbs .breadcrumbs-1:after {
-  content: "/";
-  margin: 0 11px;
-  color: #666;
-}
-.breadcrumb-section .breadcrumb-inner .breadcrumbs .breadcrumbs-1:hover {
-  color: #333;
-}
 
 .breadcrumb-section-white .breadcrumb-inner h1 {
   color: white;
@@ -414,12 +413,6 @@ ul {
 }
 .breadcrumb-section-white .breadcrumb-inner .breadcrumbs .breadcrumbs-1 {
   color: white;
-}
-.breadcrumb-section-white .breadcrumb-inner .breadcrumbs .breadcrumbs-1:after {
-  color: white;
-}
-.breadcrumb-section-white .breadcrumb-inner .breadcrumbs .breadcrumbs-1:hover {
-  color: grey;
 }
 
 /* Back To Top Button */
