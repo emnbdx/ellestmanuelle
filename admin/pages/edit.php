@@ -51,7 +51,7 @@
     <title>Ellestmanuelle | Administration créations</title>
   </head>
   <body>
-   	<div class="container">
+   	<div class="">
 		<?php
 			if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == "uc")
 			{
