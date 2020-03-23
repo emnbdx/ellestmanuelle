@@ -3446,6 +3446,7 @@ textarea:-moz-placeholder {
 }
 .story-about-section .story-content .story-detail p {
   margin-bottom: 15px;
+  text-align: justify;
 }
 .story-about-section .story-content .story-detail .info {
   margin-top: 60px;
