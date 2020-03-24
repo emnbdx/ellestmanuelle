@@ -7,6 +7,24 @@
 	h3 {
 		padding: 10px 0;
 	}
+	a {
+		font-weight: 600;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	ul {
+		list-style-type: disc;
+	}
+	ul ul {
+		list-style-type: circle;
+	}
+	ul ul ul {
+		list-style-type: initial;
+	}
+	ul ul ul ul {
+		list-style-type: initial;
+	}
 }
 .blog-masonry-section {
 	.blog-content {
