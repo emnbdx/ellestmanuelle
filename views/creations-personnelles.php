@@ -36,8 +36,11 @@
 			<div class="breadcrumb-inner">
 				<h1>Créations personnelles</h1>
 				<ul class="breadcrumbs">
-					<li><a class="breadcrumbs-1" href="/">Accueil</a></li>
-					<li><p class="breadcrumbs-2">Créations personnelles</p></li>
+					<li></li> 
+					<li>
+						<a class="breadcrumbs-1" href="/">Accueil</a>
+						/ Créations personnelles
+						</li>
 				</ul>
 			</div>	
 		</div>

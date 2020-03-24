@@ -5,8 +5,10 @@
 				<div class="breadcrumb-inner">
 					<h1>Contact</h1>
 					<ul class="breadcrumbs">
-						<li><a class="breadcrumbs-1" href="/">Accueil</a></li>
-						<li><p class="breadcrumbs-2">Contact</p></li>
+						<li>
+							<a class="breadcrumbs-1" href="/">Accueil</a>
+							/ Contact
+						</li>
 					</ul>
 				</div>	
 		</div>
