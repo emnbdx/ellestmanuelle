@@ -42,6 +42,7 @@
                 FROM technique t
                 INNER JOIN tag ta on ta.id_technique = t.id
                 GROUP BY t.id, t.name, t.kind
+                ORDER BY t.kind DESC
             ');
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, Technique::class);
@@ -102,6 +103,8 @@
                     $sql .= " AND t.id_theme = $themeId";
             }
 
+            $date = date('Hjn');
+            $sql .= " ORDER BY RAND($date)";
             $sql .= " LIMIT $count OFFSET $from";
 
             $stmt = $this->connection->prepare($sql);
