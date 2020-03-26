@@ -32,9 +32,9 @@
 	<link rel="stylesheet" href="vendor/owl/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="vendor/owl/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="vendor/owl/css/animate.css">
-    <!-- fancybox-master Library -->
-    <link rel="stylesheet" type="text/css" href="vendor/fancybox-master/css/jquery.fancybox.min.css">
-    <!-- Main Style Css -->
+    <!-- fancybox Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+	<!-- Main Style Css -->
     <link rel="stylesheet" href="css/style.min.css"/>
 </head>
 <body>
@@ -48,8 +48,8 @@
 	<!-- Owl Carousel 2 -->
   	<script src="vendor/owl/js/owl.carousel.min.js"></script>
   	<script src="vendor/owl/js/OwlCarousel2Thumbs.min.js"></script>
-	<!-- fancybox-master Library -->
-	<script type="text/javascript" src="vendor/fancybox-master/js/jquery.fancybox.min.js"></script>
+	<!-- fancybox Library -->
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 	<!-- Form -->
     <script src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script src="js/config-contact.js"></script>

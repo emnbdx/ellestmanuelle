@@ -62,19 +62,6 @@
     });     
     /*End Back To Top Button*/
 
-    // Fancybox
-    $('a.gallery-elements').fancybox({
-        'transitionIn'  :   'elastic',
-        'transitionOut' :   'elastic',
-        'speedIn'       :   500, 
-        'speedOut'      :   500, 
-        'overlayShow'   :   false,
-        'width'         : 937,
-        'autoDimensions' : false,
-        'centerOnScroll' : true,
-    });
-    // End Fancybox
-
     /*Testimonials Section of hp-1*/
     $('#testimonials-hp-1').owlCarousel({
         items:1,
