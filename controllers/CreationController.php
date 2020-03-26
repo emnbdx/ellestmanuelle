@@ -75,10 +75,24 @@
 			//	echo "			<span><i class=\"zmdi zmdi-chevron-left\"></i></span>";
 			//	echo "		</a>";
 			//}
+
+			$filter = "";
+			if($this->searchString !== "")
+			{
+				$filter = "&search=$this->searchString";
+			}
+			else if ($this->currentTechniqueId !== 0)
+			{
+				$filter = "&technique=$this->currentTechniqueId";
+			}
+			else if ($this->currentThemeId !== 0)
+			{
+				$filter = "&theme=$this->currentThemeId";
+			}			
 			
 			for ($i=0; $i < $pageCount; $i++)
-			{ 
-				echo "		<a href=\"?page=$i\" class=\"page-numbers" . ($i == $this->currentPage ? " current" : "") . "\">";
+			{
+				echo "		<a href=\"?page=$i" . ($filter == "" ? "" : $filter) . "\" class=\"page-numbers" . ($i == $this->currentPage ? " current" : "") . "\">";
 				echo "			<span>" . ($i + 1) . "</span>";
 				echo "		</a>";
 			}
