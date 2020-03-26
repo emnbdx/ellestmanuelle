@@ -55,7 +55,7 @@
             $sql = "SELECT count(distinct t.id_creation) as nb from tag t";
             if($search !== "")
             {
-                $sql .= " INNER JOIN creation c on c.id = t.id_creation and c.name like '%$search%'";
+                $sql .= " INNER JOIN creation c on c.id = t.id_creation and (c.name like '%$search%' or c.description like '%$search%')";
             }
             
             if($techniqueId !== 0)
@@ -82,7 +82,7 @@
             $sql = "SELECT c.* FROM creation c";
             if($search !== "")
             {
-                $sql .= " WHERE c.name like '%$search%'";
+                $sql .= " WHERE (c.name like '%$search%' or c.description like '%$search%')";
             }
             
             if($techniqueId !== 0)
