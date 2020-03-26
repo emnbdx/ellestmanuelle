@@ -18,16 +18,19 @@
 	<section class="contact-section section-box">
 		<div class="container">
 				<div class="contact-content">
-					<div class="row">
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+					<div class="row contact-quote">
+						<div class="col-12 text-center">
 							<h5>
 								<b>Parce que rien ne vaut la rencontre et l’échange, ensemble, étudions votre demande.</b>
 								<br/>
 								Je vous laisse ici me décrire brièvement vos besoins et je vous contacte au plus vite pour trouver un terrain d’entente.
+								<br/><br/>
 							</h5>
 						</div>
+					</div>
+					<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-							<div class="quote-form">
+							<div class="quote-form">								
 								<form class="form-contact js-contact-form" method="POST" action="/controllers/ContactController.php">
 									<div class="form-input">
 										<input type="text" name="name" placeholder="Nom" required>
@@ -46,6 +49,17 @@
 										<span><i class="zmdi zmdi-arrow-right"></i></span>
 									</div>
 								</form>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+							<div class="contact-details text-center">
+								<div class="contact-info text-left">
+									<div class="contact-inner">
+										<p><i class="zmdi zmdi-map"></i> 33000 Bordeaux</p>
+										<p class="center"><i class="zmdi zmdi-email"></i> contact@ellestmanuelle.fr</p>
+									</div>
+								</div>
+								<img src="/images/contact-bordeaux.jpg"/>
 							</div>
 						</div>
 					</div>

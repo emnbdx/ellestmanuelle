@@ -12,6 +12,9 @@
 }
 .contact-section {
 	.contact-content {
+		.contact-quote {
+			padding-bottom: 100px;
+		}
 		.quote-form {
 			margin-right: 30px;
 			.form-input {
@@ -106,6 +109,9 @@
 						color: #333;
 					}
 				}
+			}
+			img {
+				width: 50%;
 			}
 		}
 	}

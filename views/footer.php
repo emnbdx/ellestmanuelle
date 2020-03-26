@@ -6,6 +6,10 @@
 					<div class="footer-items footer-items-1">
 						<h4>Contact</h4>
 						<div class="contact">
+							<i class="zmdi zmdi-map"></i>
+							<span>33000 Bordeaux</span>
+						</div>
+						<div class="contact">
 							<i class="zmdi zmdi-email"></i>
 							<span><a href="mailto:contact@ellestmanuelle.fr" target="_blank">contact@ellestmanuelle.fr</a></span>
 						</div>
