@@ -18,7 +18,7 @@
                         var type = result.type
                         if (type === "success") {
                             swal ("Success", message, "success")
-                            that.reset();
+                            that.trigger("reset");
                         } else if (type === "danger") {
                             swal ("Oops", message, "error")
                         }
