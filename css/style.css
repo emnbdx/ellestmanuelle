@@ -5753,9 +5753,11 @@ textarea:-moz-placeholder {
 }
 .blog-masonry-section.section-box a {
   font-weight: 600;
+  color: #007bff;
 }
 .blog-masonry-section.section-box a:hover {
   text-decoration: underline;
+  color: #0056b3;
 }
 .blog-masonry-section.section-box ul {
   list-style-type: disc;
