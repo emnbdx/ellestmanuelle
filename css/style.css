@@ -3517,6 +3517,17 @@ textarea:-moz-placeholder {
   justify-content: center;
 }
 
+.cv-about-us a,
+.story-about-section a {
+  font-weight: 600;
+  color: #007bff;
+}
+.cv-about-us a:hover,
+.story-about-section a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
 /* End Testimonials Section */
 /* Map Section */
 .map-section .js-map-holder {

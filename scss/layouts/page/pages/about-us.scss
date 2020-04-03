@@ -106,4 +106,16 @@
 		justify-content: center;
 	}
 }
+
+.cv-about-us,
+.story-about-section {
+	a {
+		font-weight: 600;
+		color: #007bff;
+		&:hover {
+			text-decoration: underline;
+			color: #0056b3;
+		}
+	}
+}
 /* End Testimonials Section */
