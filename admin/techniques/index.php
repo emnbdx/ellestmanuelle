@@ -52,6 +52,7 @@
 					<thead>
 						<tr class="bg-primary text-white">
 							<th>Id</th>
+							<th>Position</th>
 							<th>Name</th>
 							<th>Type</th>
 							<th class="text-center">Action</th>
@@ -66,6 +67,7 @@
 						?>
 						<tr>
 							<td><?php echo $technique['id'];?></td>
+							<td><?php echo $technique['position'];?></td>
 							<td><?php echo $technique['name'];?></td>
 							<td><?php echo $technique['kind'];?></td>
 							<td align="center">

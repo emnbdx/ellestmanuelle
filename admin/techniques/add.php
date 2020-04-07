@@ -18,7 +18,8 @@
 
 		$data = array(
 			'name'=>$name,
-			'kind'=>$kind
+			'kind'=>$kind,
+			'position'=>$position
 		);
 
 		$repo->insert('technique', $data);
@@ -68,6 +69,10 @@
 							<div class="form-group">
 								<label>Type <span class="text-danger">*</span></label>
 								<input type="text" name="kind" id="kind" class="form-control" required>
+							</div>
+							<div class="form-group">
+								<label>Position</label>
+								<input type="number" name="position" id="position" class="form-control">
 							</div>
 							<div class="form-group">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> Add Technique</button>

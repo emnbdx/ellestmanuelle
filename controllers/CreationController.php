@@ -135,7 +135,7 @@
 				if($technique->kind != $currentKind)
 				{				
 					$currentKind = $technique->kind;
-					echo "<h5>$currentKind</h5>";
+					echo "<h5>* $currentKind</h5>";
 				}
 				echo "<li class=\"cat-item cat-parent" . ($technique->id == $this->currentTechniqueId ? " current" : "") . "\">";
 				echo "<a href=\"?technique=" . $technique->id  . "\"><span>" . $technique->name . "</span></a>";

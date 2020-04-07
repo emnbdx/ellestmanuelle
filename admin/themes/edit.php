@@ -17,7 +17,8 @@
 		}
 
 		$data = array(
-			'name'=>$name
+			'name'=>$name,
+			'position'=>$position
 		);
 		
 		$repo->update('theme', $data, array('id' => $editId));
@@ -58,6 +59,10 @@
 						<div class="form-group">
 							<label>Name <span class="text-danger">*</span></label>
 							<input type="text" name="name" id="name" class="form-control" value="<?php echo $theme['name']; ?>" required>
+						</div>
+						<div class="form-group">
+							<label>Position</label>
+							<input type="number" name="position" id="position" class="form-control" value="<?php echo $theme['position']; ?>">
 						</div>
 						<div class="form-group">
 							<input type="hidden" name="editId" id="editId" value="<?php echo $_REQUEST['editId']?>">

@@ -24,6 +24,7 @@
 		$data = array(
 			'name'=>$name,
 			'kind'=>$kind,
+			'position'=>$position
 		);
 		
 		$repo->update('technique', $data, array('id' => $editId));
@@ -72,6 +73,10 @@
 						<div class="form-group">
 							<label>Type <span class="text-danger">*</span></label>
 							<input type="text" name="kind" id="kind" class="form-control" value="<?php echo $technique['kind']; ?>" required>
+						</div>
+						<div class="form-group">
+							<label>Position</label>
+							<input type="number" name="position" id="position" class="form-control" value="<?php echo $technique['position']; ?>">
 						</div>
 						<div class="form-group">
 							<input type="hidden" name="editId" id="editId" value="<?php echo $_REQUEST['editId']?>">

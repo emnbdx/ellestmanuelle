@@ -73,13 +73,13 @@
 							</div>
 							<!-- Categories -->
 							<div class="widget widget_product_categories">
-								<h3 class="widget-title">Thématique</h3>
-								<?php $creationController->buildThemeList() ?>
+								<h3 class="widget-title">Technique</h3>
+								<?php $creationController->buildTechniqueList() ?>
 							</div>
 							<!-- Categories -->
 							<div class="widget widget_product_categories">
-								<h3 class="widget-title">Technique</h3>
-								<?php $creationController->buildTechniqueList() ?>
+								<h3 class="widget-title">Matériau</h3>
+								<?php $creationController->buildThemeList() ?>
 							</div>
 						</div>
 					</div>

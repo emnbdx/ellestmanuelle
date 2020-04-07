@@ -52,6 +52,7 @@
 					<thead>
 						<tr class="bg-primary text-white">
 							<th>Id</th>
+							<th>Position</th>
 							<th>Name</th>
 							<th class="text-center">Action</th>
 						</tr>
@@ -65,6 +66,7 @@
 						?>
 						<tr>
 							<td><?php echo $theme['id'];?></td>
+							<td><?php echo $theme['position'];?></td>
 							<td><?php echo $theme['name'];?></td>
 							<td align="center">
 								<a href="edit.php?editId=<?php echo $theme['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> | 

@@ -28,6 +28,7 @@
                 FROM theme t 
                 INNER JOIN tag ta on ta.id_theme = t.id
                 GROUP BY t.id, t.name
+                ORDER BY t.position
             '); 
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, Theme::class);
@@ -42,7 +43,7 @@
                 FROM technique t
                 INNER JOIN tag ta on ta.id_technique = t.id
                 GROUP BY t.id, t.name, t.kind
-                ORDER BY t.kind DESC
+                ORDER BY t.kind DESC, t.position
             ');
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, Technique::class);

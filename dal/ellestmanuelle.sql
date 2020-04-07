@@ -97,25 +97,26 @@ INSERT INTO `tag` (`id_creation`, `id_technique`, `id_theme`) VALUES
 CREATE TABLE `technique` (
   `id` int(11) NOT NULL,
   `kind` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `position` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `technique`
 --
 
-INSERT INTO `technique` (`id`, `kind`, `name`) VALUES
-(1, 'artistique', 'illustrations livres pour enfants'),
-(2, 'artistique', 'dessins au jour le jour'),
-(3, 'artistique', 'linogravure'),
-(4, 'artistique', 'sculpture'),
-(5, 'artistique', 'pliage papier : origami, pop up'),
-(6, 'artistique', 'graphisme : commandes historial'),
-(7, 'artisanale', 'couture canevas'),
-(8, 'artisanale', 'broderie'),
-(9, 'artisanale', 'tricot'),
-(10, 'artisanale', 'poterie'),
-(11, 'artisanale', 'décoration objets : peinture porcelaine');
+INSERT INTO `technique` (`id`, `kind`, `name`, `position`) VALUES
+(1, 'artistique', 'illustrations livres pour enfants', 0),
+(2, 'artistique', 'dessins au jour le jour', 0),
+(3, 'artistique', 'linogravure', 0),
+(4, 'artistique', 'sculpture', 0),
+(5, 'artistique', 'pliage papier : origami, pop up', 0),
+(6, 'artistique', 'graphisme : commandes historial', 0),
+(7, 'artisanale', 'couture canevas', 0),
+(8, 'artisanale', 'broderie', 0),
+(9, 'artisanale', 'tricot', 0),
+(10, 'artisanale', 'poterie', 0),
+(11, 'artisanale', 'décoration objets : peinture porcelaine', 0);
 
 -- --------------------------------------------------------
 
@@ -125,21 +126,22 @@ INSERT INTO `technique` (`id`, `kind`, `name`) VALUES
 
 CREATE TABLE `theme` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `position` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `theme`
 --
 
-INSERT INTO `theme` (`id`, `name`) VALUES
-(1, 'le papier : origami, pop up'),
-(2, 'la flore, la nature  : herbier'),
-(3, 'le textile : couture, broderie, tricot'),
-(4, 'le scotch et autre matériau insolite : sculptures'),
-(5, 'la gomme, le carton : linogravure, tampons'),
-(6, 'l’argile : poterie, sculpture'),
-(7, 'les illustrations');
+INSERT INTO `theme` (`id`, `name`, `position`) VALUES
+(1, 'le papier : origami, pop up', 0),
+(2, 'la flore, la nature  : herbier', 0),
+(3, 'le textile : couture, broderie, tricot', 0),
+(4, 'le scotch et autre matériau insolite : sculptures', 0),
+(5, 'la gomme, le carton : linogravure, tampons', 0),
+(6, 'l’argile : poterie, sculpture', 0),
+(7, 'les illustrations', 0);
 
 -- --------------------------------------------------------
 

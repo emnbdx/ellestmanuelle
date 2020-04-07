@@ -12,7 +12,8 @@
 		}
 
 		$data = array(
-			'name'=>$name
+			'name'=>$name,
+			'position'=>$position
 		);
 
 		$repo->insert('theme', $data);
@@ -54,6 +55,10 @@
 							<div class="form-group">
 								<label>Name <span class="text-danger">*</span></label>
 								<input type="text" name="name" id="name" class="form-control" required>
+							</div>
+							<div class="form-group">
+								<label>Position</label>
+								<input type="number" name="position" id="position" class="form-control">
 							</div>
 							<div class="form-group">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> Add Theme</button>
