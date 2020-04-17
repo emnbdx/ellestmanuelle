@@ -5,7 +5,7 @@ I try to experiment MVC, routing and 'CMS' in php and i'm pretty satisfied with 
 
 ## Build instructions
 
-You need composer (https://getcomposer.org/download/) get dependancies
+You need composer (https://getcomposer.org/download/) to get dependancies
 
 To install package
 
