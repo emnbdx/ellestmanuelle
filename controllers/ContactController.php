@@ -40,7 +40,6 @@
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
-        // To load the French version
         $mail->CharSet    = PHPMailer::CHARSET_UTF8;
 
         //Recipients
