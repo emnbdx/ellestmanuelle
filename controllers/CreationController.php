@@ -172,19 +172,21 @@
 					echo "<div class=\"row\">";
 					$firstRow = false;
 				}
-
+				
 				echo "<div class=\"col\">";
 				echo "	<div class=\"product type-product\">";
 				echo "		<div class=\"woocommerce-LoopProduct-link\">";
 				echo "			<div class=\"product-image\">";
-				echo "				<div class=\"wp-post-image\">";
-				echo "					<img class=\"image-cover\" src=\"/images/uploads/" . $product->picture . "\" alt=\"image\">";
+				echo "				<a href=\"/images/uploads/" . $product->picture . "\" data-fancybox=\"gallery\" class=\"gallery-elements\" data-cation=\"" . $product->description . "\">";
+				echo "					<div class=\"wp-post-image\">";
+				echo "						<img class=\"image-cover\" src=\"/images/uploads/" . $product->picture . "\" alt=\"image\">";
 				if($product->picture2 != "" && $product->picture2 != "hp-1-featured-11.jpg")
 				{
-					echo "					<img class=\"image-secondary\" src=\"/images/uploads/" . $product->picture2 . "\" alt=\"product\">";
+					echo "						<img class=\"image-secondary\" src=\"/images/uploads/" . $product->picture2 . "\" alt=\"product\">";
 				}
-				echo "				</div>";
-				echo "				<h5 class=\"woocommerce-loop-product__title\"><a href=\"#\">" . $product->name . "</a></h5>";
+				echo "					</div>";
+				echo "					<h5 class=\"woocommerce-loop-product__title\">" . $product->name . "</h5>";
+				echo "				</a>";
 				echo "			</div>";
 				echo "		</div>";
 				echo "	</div>";
