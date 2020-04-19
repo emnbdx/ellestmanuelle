@@ -91,6 +91,7 @@
 				overflow: hidden;
 				img {
 					@include transition(transform 0.6s cubic-bezier(.25,.46,.45,.94));
+					height: 250px;
 				}
 			}
 			.product {
