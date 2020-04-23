@@ -7468,6 +7468,10 @@ textarea:-moz-placeholder {
   .items-hp-5.product-showcase-section.section-box {
     padding-bottom: 0;
   }
+
+  .categories-hp-1 .categories-content .categories-detail .images img {
+    height: 210px;
+  }
 }
 /* 992px <= X <= 1199px --- Large */
 @media screen and (max-width: 1199px) and (min-width: 992px) {
@@ -7971,6 +7975,10 @@ textarea:-moz-placeholder {
 
   .landing-page-section .content .page-image-view .page-left {
     padding-right: 0;
+  }
+
+  .categories-hp-1 .categories-content .categories-detail .images img {
+    height: 150px;
   }
 }
 /* 768px <= X <= 991px --- Large */
