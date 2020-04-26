@@ -3845,6 +3845,15 @@ textarea:-moz-placeholder {
 
 /* End Shop Section Of Shop Full Width */
 /* Shop Section Of Shop Right Width Siderbar */
+.shop-right-siderbar .card {
+  border: none;
+}
+.shop-right-siderbar .card .card-header {
+  display: none;
+}
+.shop-right-siderbar .card .collapse:not(.show) {
+  display: block;
+}
 .shop-right-siderbar .widget-area {
   padding-bottom: 100px;
 }
@@ -7926,6 +7935,20 @@ textarea:-moz-placeholder {
   }
 
   /* Shop Section Of Shop Right Width Siderbar */
+  .shop-right-siderbar .card-header {
+    display: block !important;
+  }
+  .shop-right-siderbar .card-header .btn-link:after {
+    content: "∧";
+  }
+  .shop-right-siderbar .card-header .btn-link.collapsed:after {
+    content: "∨";
+  }
+
+  .shop-right-siderbar .collapse:not(.show) {
+    display: none !important;
+  }
+
   .shop-right-siderbar .widget-area .widget_banner .widget_banner-content {
     left: 50px;
     top: 50%;

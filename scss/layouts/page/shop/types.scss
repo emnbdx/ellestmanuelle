@@ -48,6 +48,16 @@
 
 /* Shop Section Of Shop Right Width Siderbar */
 .shop-right-siderbar {
+	.card {
+		border: none;
+		.card-header{
+			display: none;
+		}
+		.collapse:not(.show) {
+			display: block;
+		}
+	}
+
 	.widget-area {
 		padding-bottom: 100px;
 		.widget_search {

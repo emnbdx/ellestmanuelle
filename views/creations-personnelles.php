@@ -61,25 +61,35 @@
 				</div>
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-						<div class="widget-area">
-							<!-- Search -->
-							<div class="widget widget_search">
-								<form class="search-form" method="get" role="search">
-									<input type="search" name="search" class="search-field" placeholder="Rechercher..." value="<?php echo $creationController->getSearchString() ?>">
-									<button class="search-submit" type="submit">
-										<i class="zmdi zmdi-search"></i>
+						<div class="card">
+							<div class="card-header" id="heading">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
+									Filtres <i class="fa fa-down"></i>
 									</button>
-								</form>
+								</h5>
 							</div>
-							<!-- Categories -->
-							<div class="widget widget_product_categories">
-								<h3 class="widget-title">Technique</h3>
-								<?php $creationController->buildTechniqueList() ?>
-							</div>
-							<!-- Categories -->
-							<div class="widget widget_product_categories">
-								<h3 class="widget-title">Matériau</h3>
-								<?php $creationController->buildThemeList() ?>
+
+							<div class="widget-area collapse collapsed" id="collapse" aria-labelledby="heading">
+								<!-- Search -->
+								<div class="widget widget_search">
+									<form class="search-form" method="get" role="search">
+										<input type="search" name="search" class="search-field" placeholder="Rechercher..." value="<?php echo $creationController->getSearchString() ?>">
+										<button class="search-submit" type="submit">
+											<i class="zmdi zmdi-search"></i>
+										</button>
+									</form>
+								</div>
+								<!-- Categories -->
+								<div class="widget widget_product_categories">
+									<h3 class="widget-title">Technique</h3>
+									<?php $creationController->buildTechniqueList() ?>
+								</div>
+								<!-- Categories -->
+								<div class="widget widget_product_categories">
+									<h3 class="widget-title">Matériau</h3>
+									<?php $creationController->buildThemeList() ?>
+								</div>
 							</div>
 						</div>
 					</div>

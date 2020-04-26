@@ -588,6 +588,18 @@
         left: 5%;
     }
     /* Shop Section Of Shop Right Width Siderbar */
+    .shop-right-siderbar .card-header {
+        display: block !important;
+        .btn-link:after {
+            content: "∧";
+        }
+        .btn-link.collapsed:after {
+            content: "∨";
+        }
+    }
+    .shop-right-siderbar .collapse:not(.show) {
+        display: none !important;
+    }
     .shop-right-siderbar .widget-area .widget_banner .widget_banner-content {
         left: 50px;
         top: 50%;
