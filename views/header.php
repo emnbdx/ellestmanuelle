@@ -37,11 +37,11 @@
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="/ateliers#philosophie">Ma philosophie d’animation</a></li>
-											<li><a href="/ateliers#prestations">Types de prestations</a></li>
-											<li><a href="/ateliers#tarifs">Tarifs</a></li>
+											<li><a href="/ateliers#publics">Publics</a></li>
 											<li><a href="/ateliers#catalogue">Catalogue</a></li>
-											<li><a href="/ateliers#reference">Les avis des participants</a></li>
+											<li><a href="/ateliers#objectifs">Objectifs pédagogiques</a></li>
+											<li><a href="/ateliers#tarifs">Tarifs</a></li>
+											<li><a href="/ateliers#reference">Avis des participants</a></li>
 										</ul>
 									</li>
 									<li>
@@ -50,8 +50,8 @@
 											<i class="zmdi zmdi-chevron-right"></i>
 										</a>
 										<ul class="sub-menu menu-levels">
-											<li><a href="/illustrations#albums">Albums jeunesse</a></li>
 											<li><a href="/illustrations#outils">Outils pédagogiques</a></li>
+											<li><a href="/illustrations#albums">Albums jeunesse</a></li>
 											<li><a href="/illustrations#graphisme">Graphisme</a></li>
 											<li><a href="/illustrations#tarifs">Tarifs</a></li>
 											<li><a href="/illustrations#reference">Ils m’ont fait confiance</a></li>
