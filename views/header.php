@@ -125,10 +125,10 @@
 								</span>
 								</a>
 								<ul class="drop-menu bottom-right">
-									<li><a class="drop-menu-inner" href="/ateliers#philosophie">Ma philosophie d’animation</a></li>
-									<li><a class="drop-menu-inner" href="/ateliers#prestations">Types de prestations</a></li>
-									<li><a class="drop-menu-inner" href="/ateliers#tarifs">Tarifs</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers#publics">Publics</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#catalogue">Catalogue</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers#objectifs">Objectifs pédagogiques</a></li>
+									<li><a class="drop-menu-inner" href="/ateliers#tarifs">Tarifs</a></li>
 									<li><a class="drop-menu-inner" href="/ateliers#reference">Les avis des participants</a></li>
 								</ul>
 							</li>
@@ -140,8 +140,8 @@
 								</span>
 								</a>
 								<ul class="drop-menu bottom-right">
-									<li><a class="drop-menu-inner" href="/illustrations#albums">Albums jeunesse</a></li>
 									<li><a class="drop-menu-inner" href="/illustrations#outils">Outils pédagogiques</a></li>
+									<li><a class="drop-menu-inner" href="/illustrations#albums">Albums jeunesse</a></li>
 									<li><a class="drop-menu-inner" href="/illustrations#graphisme">Graphisme</a></li>
 									<li><a class="drop-menu-inner" href="/illustrations#tarifs">Tarifs</a></li>
 									<li><a class="drop-menu-inner" href="/illustrations#reference">Ils m’ont fait confiance</a></li>
