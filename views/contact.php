@@ -55,11 +55,11 @@
 							<div class="contact-details text-center">
 								<div class="contact-info text-left">
 									<div class="contact-inner">
-										<p><i class="zmdi zmdi-map"></i> 33000 Bordeaux</p>
+										<p><i class="zmdi zmdi-map"></i> 46300 Gourdon, Lot</p>
 										<p class="center"><i class="zmdi zmdi-email"></i> contact@ellestmanuelle.fr</p>
 									</div>
 								</div>
-								<img src="/images/contact-bordeaux.jpg"/>
+								<img src="/images/contact-gourdon.jpg"/>
 							</div>
 						</div>
 					</div>
