@@ -1,0 +1,47 @@
+<div class="card">
+	<div class="card-header">
+		<i class="fa fa-fw fa-globe"></i><strong>Liste des créations</strong>
+		<a href="/admin" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Retour</a>
+		<a href="/admin/creation/add" class="float-right btn btn-success btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Ajout</a>
+	</div>
+</div>
+
+<div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr class="bg-primary text-white">
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Description</th>
+				<th>Image</th>
+				<th>Seconde image</th>
+				<th class="text-center">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			if (count($data) > 0) {
+				foreach ($data as $creation) {
+			?>
+					<tr>
+						<td><?php echo $creation['id']; ?></td>
+						<td><?php echo $creation['name']; ?></td>
+						<td><?php echo $creation['description']; ?></td>
+						<td><?php echo $creation['picture']; ?></td>
+						<td><?php echo $creation['picture2']; ?></td>
+						<td align="center">
+							<a href="/admin/creation/<?php echo $creation['id']; ?>/update" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edition</a> |
+							<a href="/admin/creation/<?php echo $creation['id']; ?>/delete" class="text-danger" onClick="return confirm('Êtes-vous sûr ?');"><i class="fa fa-fw fa-trash"></i> Suppression</a>
+						</td>
+					</tr>
+				<?php
+				}
+			} else {
+				?>
+				<tr>
+					<td colspan="6" align="center">Rien à afficher !</td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+</div>

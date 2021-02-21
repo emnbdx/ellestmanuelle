@@ -1,0 +1,169 @@
+<div class="page-content">
+	<!-- Breadcrumb Section -->
+	<section class="breadcrumb-section breadcrumb-section-white section-box" style="background-image: url(/images/breadcrumb-creations-personnelles.jpg)">
+		<div class="container">
+			<div class="breadcrumb-inner">
+				<h1>Créations personnelles</h1>
+				<ul class="breadcrumbs">
+					<li></li> 
+					<li>
+						<a class="breadcrumbs-1" href="/">Accueil</a>
+						/ Créations personnelles
+						</li>
+				</ul>
+			</div>	
+		</div>
+	</section>
+	<!-- End Breadcrumb Section -->
+	<!-- Portfolio Section -->
+	<section class="featured-hp-1 items-hp-6 shop-full-page shop-right-siderbar">
+		<div class="container">
+			<div class="featured-content woocommerce">
+				<div class="row">
+					<div class="col-12 text-center">
+						Vous souhaitez une de ces créations ? <a href="/contact">Contactez-moi</a>
+						<br/>
+						Bientôt une boutique en ligne...
+						<br/>
+						<br/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+						<div class="card">
+							<div class="card-header" id="heading">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
+									Filtres <i class="fa fa-down"></i>
+									</button>
+								</h5>
+							</div>
+
+							<div class="widget-area collapse collapsed" id="collapse" aria-labelledby="heading">
+								<!-- Search -->
+								<div class="widget widget_search">
+									<form class="search-form" method="get" role="search">
+										<input type="search" name="search" class="search-field" placeholder="Rechercher..." value="<?php echo $data['searchString'] ?>">
+										<button class="search-submit" type="submit">
+											<i class="zmdi zmdi-search"></i>
+										</button>
+									</form>
+								</div>
+								<!-- Categories -->
+								<div class="widget widget_product_categories">
+									<h3 class="widget-title">Technique</h3>
+									<ul class="product-categories">
+										<?php foreach($data['themes'] as $theme) { ?>
+											<li class="cat-item cat-parent<?php echo $theme->id == $data['currentThemeId'] ? ' current' : '' ?>">
+												<a href="?theme=<?php echo $theme->id ?>"><span><?php echo $theme->name ?></span></a>
+												<a href="?theme=<?php echo $theme->id ?>"><span>(<?php echo $theme->nb ?>)</span></a>
+											</li>
+										<?php } ?>
+									</ul>
+								</div>
+								<!-- Categories -->
+								<div class="widget widget_product_categories">
+									<h3 class="widget-title">Matériau</h3>
+									<ul class="product-categories">
+										<?php 
+											$currentKind = "";
+											foreach($data['techniques'] as $technique) { 
+												if($technique->kind != $currentKind)
+												{				
+													$currentKind = $technique->kind;
+													echo "<h5>* $currentKind</h5>";
+												}
+										?>
+											<li class="cat-item cat-parent<?php echo $technique->id == $data['currentTechniqueId'] ? ' current' : '' ?>">
+												<a href="?technique=<?php echo $technique->id ?>"><span><?php echo $technique->name ?></span></a>
+												<a href="?technique=<?php echo $technique->id ?>"><span>(<?php echo $technique->nb ?>)</span></a>
+											</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+						<div class="content-area">
+							<div class="storefront-sorting">
+								<p class="woocommerce-result-count">
+									<?php echo 'Affichage des résultats ' . $data['firstCount'] . ' à ' . $data['lastCount'] . ' sur ' . $data['productCount'] ?>
+								</p>
+							</div>
+							<?php
+								$firstRow = true;
+								$index = 0;
+								foreach($data['products'] as $product)
+								{
+									if($index % 3 === 0) {
+
+										if($firstRow === false) {
+											echo "</div>";
+										}
+
+										echo "<div class=\"row\">";
+										$firstRow = false;
+									}
+							?>
+								<div class="col">
+									<div class="product type-product">
+										<div class="woocommerce-LoopProduct-link">
+											<div class="product-image">
+												<a href="/images/uploads/<?php echo $product->picture ?>" data-fancybox="gallery" class="gallery-elements" data-cation="<?php echo $product->description ?>">
+													<div class="wp-post-image">
+														<img class="image-cover" src="/images/uploads/<?php echo $product->picture ?>" alt="image">
+															<?php if($product->picture2 != "" && $product->picture2 != "hp-1-featured-11.jpg") { ?>
+																<img class="image-secondary" src="/images/uploads/<?php echo $product->picture2 ?>" alt="product">
+															<?php } ?>
+													</div>
+													<h5 class="woocommerce-loop-product__title"><?php echo $product->name ?></h5>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?php 
+									$index++;
+								}
+
+								echo "</div>";
+							?>
+						</div>
+						<?php if ($data['pageCount'] > 1) { ?>
+							<div class="navigation pagination">
+								<div class="page-numbers">
+									<?php 
+										$filter = "";
+										if($data['searchString'] !== "")
+										{
+											$filter = "&search=" . $data['searchString'];
+										}
+										else if ($data['currentTechniqueId'] !== 0)
+										{
+											$filter = "&technique=" . $data['currentTechniqueId'];
+										}
+										else if ($data['currentThemeId'] !== 0)
+										{
+											$filter = "&theme=" . $data['currentThemeId'];
+										}			
+										
+										for ($i=0; $i < $pageCount; $i++)
+										{
+									?>
+											<a href="?page=<?php echo $i . ($filter == "" ? "" : $filter) ?>" class="page-numbers<?php echo ($i == $data['currentPage'] ? " current" : "") ?>">
+												<span><?php echo $i + 1 ?></span>
+											</a>
+									<?php
+										}
+									?>
+								</div>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Portfolio Section -->
+</div>

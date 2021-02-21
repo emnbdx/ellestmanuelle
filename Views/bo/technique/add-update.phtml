@@ -1,0 +1,34 @@
+<div class="card">
+	<div class="card-header">
+		<i class="fa fa-fw fa-plus-circle"></i> <strong><?php echo $data['mode'] == 'EDIT' ? 'Edition' : 'Ajout' ?></strong>
+		<a href="/admin/technique" class="float-right btn btn-dark btn-sm"><i class="fa fa-arrow-circle-left"></i> Retour</a>
+	</div>
+	<div class="card-body">
+		<div class="col-12">
+			<form method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<label>Nom <span class="text-danger">*</span></label>
+					<input type="text" name="name" id="name" class="form-control" value="<?php echo $data['technique']['name']; ?>" required>
+				</div>
+				<div class="form-group">
+					<label>Type <span class="text-danger">*</span></label>
+					<input type="text" name="kind" id="kind" class="form-control" value="<?php echo $data['technique']['kind']; ?>" required>
+				</div>
+				<div class="form-group">
+					<label>Position <span class="text-danger">*</span></label>
+					<input type="number" name="position" id="position" class="form-control" value="<?php echo $data['technique']['position']; ?>" required>
+				</div>
+				<div class="form-group">
+					<input type="hidden" name="editId" id="editId" value="<?php echo $data['technique']['id'] ?>">
+					<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">
+						<?php if ($data['mode'] == 'EDIT') { ?>
+							<i class="fa fa-fw fa-edit"></i> Mettre à jour
+						<?php } else { ?>
+							<i class="fa fa-fw fa-plus-circle"></i> Ajouter
+						<?php } ?>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

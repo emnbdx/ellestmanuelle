@@ -1,69 +1,162 @@
 <?php
-	require_once("controllers/RouterController.php");
-	$routerController = new RouterController();
+	if(!session_id()) @session_start();
+
+    // composer autoloader
+    require 'vendor/autoload.php';
+
+	// project autoloader
+    spl_autoload_register(function ($className) {
+        $className = ltrim($className, '\\');
+        $fileName  = '';
+        $namespace = '';
+        if ($lastNsPos = strrpos($className, '\\')) {
+            $namespace = substr($className, 0, $lastNsPos);
+            $className = substr($className, $lastNsPos + 1);
+            $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+        }
+        $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+
+        if (file_exists($fileName)){
+            require $fileName;
+        }
+    });
+
+	$router = new AltoRouter();
+
+	$repository = new Repositories\Repository();
+	$contactController = new Controllers\ContactController();
+	$creationController = new Controllers\CreationController($repository);
+	$staticController = new Controllers\StaticController($repository);
+
+	$adminRepository = new Repositories\AdminRepository();
+	$fileUploader = new Repositories\FileUploader();
+	$adminController = new Controllers\AdminController($adminRepository, $fileUploader);
+
+	// front route
+	$router->map('GET', '', 'StaticController#index');
+    $router->map('GET', '/', 'StaticController#index');
+    $router->map('GET', '/ateliers', 'StaticController#ateliers');
+    $router->map('GET', '/illustrations', 'StaticController#illustrations');
+    $router->map('GET', '/qui-suis-je', 'StaticController#whoami');
+    $router->map('GET', '/boutique', 'StaticController#shop');
+    $router->map('GET', '/contact', 'ContactController#index');
+    $router->map('POST', '/contact', 'ContactController#send');
+	$router->map('GET', '/creations-personnelles', 'CreationController#index');
+
+	// bo route
+	$router->map('GET', '/admin/login', 'AdminController#login');
+	$router->map('POST', '/admin/login', 'AdminController#login');
+	$router->map('GET', '/admin/logout', 'AdminController#logout');
+	$router->map('GET', '/admin', 'AdminController#index');
+	$router->map('GET', '/admin/creations', 'AdminController#creationList');
+	$router->map('GET', '/admin/creation/add', 'AdminController#creationForm');
+	$router->map('POST', '/admin/creation/add', 'AdminController#addOrUpdateCreation');
+	$router->map('GET', '/admin/creation/[i:id]/update', 'AdminController#creationForm');
+	$router->map('POST', '/admin/creation/[i:id]/update', 'AdminController#addOrUpdateCreation');
+	$router->map('GET', '/admin/creation/[i:id]/delete', 'AdminController#deleteCreation');
+
+	$router->map('GET', '/admin/documents', 'AdminController#documentList');
+	$router->map('GET', '/admin/document/add', 'AdminController#documentForm');
+	$router->map('POST', '/admin/document/add', 'AdminController#addDocument');
+	$router->map('GET', '/admin/document/[i:id]/delete', 'AdminController#deleteDocument');
+
+	$router->map('GET', '/admin/pages', 'AdminController#pageList');
+	$router->map('GET', '/admin/page/[i:id]/update', 'AdminController#pageForm');
+	$router->map('POST', '/admin/page/[i:id]/update', 'AdminController#updatePage');
+
+	$router->map('GET', '/admin/techniques', 'AdminController#techniqueList');
+	$router->map('GET', '/admin/technique/add', 'AdminController#techniqueForm');
+	$router->map('POST', '/admin/technique/add', 'AdminController#addOrUpdateTechnique');
+	$router->map('GET', '/admin/technique/[i:id]/update', 'AdminController#techniqueForm');
+	$router->map('POST', '/admin/technique/[i:id]/update', 'AdminController#addOrUpdateTechnique');
+	$router->map('GET', '/admin/technique/[i:id]/delete', 'AdminController#deleteTechnique');
+
+	$router->map('GET', '/admin/themes', 'AdminController#themeList');
+	$router->map('GET', '/admin/theme/add', 'AdminController#themeForm');
+	$router->map('POST', '/admin/theme/add', 'AdminController#addOrUpdateTheme');
+	$router->map('GET', '/admin/theme/[i:id]/update', 'AdminController#themeForm');
+	$router->map('POST', '/admin/theme/[i:id]/update', 'AdminController#addOrUpdateTheme');
+	$router->map('GET', '/admin/theme/[i:id]/delete', 'AdminController#deleteTheme');
+
+	$match = $router->match();
+    
+    if(is_array($match)) {
+
+		list($controller, $action, $auth) = array_pad(explode('#', $match['target']), 3, null);
+		$ctrl = NULL;
+        $bo = false;
+		if($controller == "StaticController") {
+			$ctrl = $staticController;
+		} else if ($controller == "ContactController") {
+			$ctrl = $contactController;
+		} else if ($controller == "CreationController") {
+			$ctrl = $creationController;
+		} else if ($controller == "AdminController") {
+            $bo = true;
+			$ctrl = $adminController;
+		}
+
+        list($type, $view, $data) = $ctrl->{$action}($match['params']);
+
+        if(!$bo) {
+            if($type == 'json') {
+                header('Content-Type: application/json');
+                echo $data;
+            } else {
+                $content = __DIR__ . '/Views/' . $view . '.phtml';
+                $title = getTitle($view ?? $action);
+                require __DIR__ . "/Views/shared/layout.phtml";
+            }
+        } else {
+            $logged = isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true;
+            if(!$logged && $view != 'login') {
+                header('location: /admin/login');
+                exit;
+            }
+
+            if($logged && $view == 'login') {
+                header('location: /admin');
+                exit;
+            }
+
+            $content = __DIR__ . '/Views/bo/' . $view . '.phtml';
+            require __DIR__ . "/Views/shared/layout-bo.phtml";
+
+        }
+    }
+ 
+	function getTitle($action) 
+    {
+        $title = "Ellestmanuelle | ";
+        switch ($action)
+        {
+            case 'index' :
+                $title .= "Accueil : créations artistiques et artisanales / illustrations / interventions ateliers";
+                break;
+            case 'ateliers' :
+                $title .= "Animations d'ateliers créations";
+                break;
+            case 'contact' :
+                $title .= "Contact";
+                break;
+            case 'creations-personnelles' :
+                $title .= "Création Personnelles";
+                break;
+            case 'illustrations' :
+                $title .= "Réalisation d'illustrations";
+                break;
+            case 'whoami' :
+                $title .= "Qui suis-je ?";
+                break;
+            case 'shop' :
+                $title .= "Boutique";
+                break;
+            default :
+                $title .= "404";
+                break;
+        }
+
+     	return $title;
+    }
+
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- Basic Page Needs
-	================================================== -->
-	<meta charset="utf-8">
-	<title><?php $routerController->getTitle() ?></title>
-	<meta name="description" content="créations artistiques et artisanales / illustrations / interventions ateliers">
-	<!-- Mobile Specific Metas
-  	================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Favicon
-  	================================================== -->	
-  	<!-- <link rel="shortcut icon" href="favicon.png" /> -->
-  	<!-- Font
-  ================================================== -->
-  	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-  	<link rel="stylesheet" type="text/css" href="fonts/linearicons/style.css">
-	<link rel="stylesheet" type="text/css" href="css/poppins-font.css">
-	<link rel="stylesheet" type="text/css" href="fonts/Playlist/playlist-script-font.css">
-	<!-- CSS   
-  ================================================== -->
-	<!-- Bootrap -->
-	<!-- <link rel="stylesheet" href="vendor/bootrap/css/bootstrap.min.css"/> -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<!-- Owl Carousel 2 -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-    <!-- fancybox Library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-	<!-- Main Style Css -->
-    <link rel="stylesheet" href="css/style.min.css"/>
-</head>
-<body>
-
-	<?php $routerController->getContent(); ?>
-
-	<!--  JS  -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<!-- Owl Carousel 2 -->
-  	<script src="js/owl.carousel.min.js"></script>
-  	<script src="js/OwlCarousel2Thumbs.min.js"></script>
-	<!-- fancybox Library -->
-	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-	<!-- Form -->
-    <script src="js/sweetalert.min.js"></script>
-	<script src="js/config-contact.js"></script>
-	<!-- Main Js -->
-	<script src="js/custom.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160598401-1"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-160598401-1');
-	</script>
-</body>
-</html>

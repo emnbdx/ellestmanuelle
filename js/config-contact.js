@@ -6,7 +6,7 @@
         contactFormWrapper.each(function () {
             var that = $(this)
             that.on('submit', function (e) {
-                var url = "/controllers/ContactController.php"
+                var url = "/contact"
                 $.ajax({
                     type: "POST",
                     url: url,
