@@ -148,10 +148,10 @@
 											$filter = "&theme=" . $data['currentThemeId'];
 										}			
 										
-										for ($i=0; $i < $pageCount; $i++)
+										for ($i=0; $i < $data['pageCount']; $i++)
 										{
 									?>
-											<a href="?page=<?php echo $i . ($filter == "" ? "" : $filter) ?>" class="page-numbers<?php echo ($i == $data['currentPage'] ? " current" : "") ?>">
+											<a href="?page=<?php echo $i . ($filter == "" ? "" : $filter) ?>" class="page-numbers<?php echo ($i == $_GET['page'] ? " current" : "") ?>">
 												<span><?php echo $i + 1 ?></span>
 											</a>
 									<?php
