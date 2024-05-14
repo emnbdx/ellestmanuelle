@@ -11,7 +11,7 @@ namespace Repositories
 
         public function upload($file)
         {
-            $target_file = Config::$UPLOADFOLDER . basename($file["name"]);
+            $target_file = Config::getInstance()->UPLOADFOLDER . basename($file["name"]);
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
             $uploadOk = 1;
@@ -24,7 +24,7 @@ namespace Repositories
             }
 
             // Check file size
-            if ($file["size"] > Config::$UPLOADMAXSIZE)
+            if ($file["size"] > Config::getInstance()->UPLOADMAXSIZE)
             {
                 return "Ce fichier est trop volumineux";
                 $uploadOk = 0;

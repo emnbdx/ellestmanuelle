@@ -19,9 +19,9 @@ namespace Repositories
         public function __construct()
         {
             $this->pdo = new PDO(
-                'mysql:host=' . Config::$DBURL . ';dbname=' . Config::$DBNAME . ';charset=utf8mb4',
-                Config::$DBUSER,
-                Config::$DBPASSWORD
+                'mysql:host=' . Config::getInstance()->DBURL . ';dbname=' . Config::getInstance()->DBNAME . ';charset=utf8mb4',
+                Config::getInstance()->DBUSER,
+                Config::getInstance()->DBPASSWORD
             );
             $this->pdo->setAttribute(
                 PDO::ATTR_ERRMODE,
