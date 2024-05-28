@@ -14,14 +14,17 @@ namespace Repositories
         
         public function __construct()
         {
-            $this->connection = new PDO(
+            $options = array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::MYSQL_ATTR_SSL_CA => '',
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+            );
+            
+            $this->pdo = new PDO(
                 'mysql:host=' . Config::getInstance()->DBURL . ';dbname=' . Config::getInstance()->DBNAME . ';charset=utf8mb4',
                 Config::getInstance()->DBUSER,
-                Config::getInstance()->DBPASSWORD
-            );
-            $this->connection->setAttribute(
-                PDO::ATTR_ERRMODE,
-                PDO::ERRMODE_EXCEPTION
+                Config::getInstance()->DBPASSWORD,
+                $options
             );
         }
 
