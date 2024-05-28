@@ -20,7 +20,7 @@ namespace Repositories
                 PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
             );
             
-            $this->pdo = new PDO(
+            $this->connection = new PDO(
                 'mysql:host=' . Config::getInstance()->DBURL . ';dbname=' . Config::getInstance()->DBNAME . ';charset=utf8mb4',
                 Config::getInstance()->DBUSER,
                 Config::getInstance()->DBPASSWORD,
