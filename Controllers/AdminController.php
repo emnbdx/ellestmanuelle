@@ -26,7 +26,7 @@ namespace Controllers {
             if (isset($_REQUEST['submit']) && $_REQUEST['submit'] != "") {
                 extract($_REQUEST);
                 
-                if(Config::$ADMIN_USER == $login && Config::$ADMIN_PASSWORD == $password) {
+                if(Config::getInstance()->ADMIN_USER == $login && Config::getInstance()->ADMIN_PASSWORD == $password) {
                     $_SESSION["loggedin"] = true;
                     header('location: /admin');
                     exit();
@@ -155,9 +155,9 @@ namespace Controllers {
             if (isset($params['id']) && $params['id'] != "") {
                 $creation = $this->repository->getAllRecords('creation', '*', ' AND id="' . $params['id'] . '"')[0];
                 if ($creation["picture"])
-                    unlink(Config::$UPLOADFOLDER . $creation["picture"]);
+                    unlink(Config::getInstance()->UPLOADFOLDER . $creation["picture"]);
                 if ($creation["picture2"])
-                    unlink(Config::$UPLOADFOLDER . $creation["picture2"]);
+                    unlink(Config::getInstance()->UPLOADFOLDER . $creation["picture2"]);
 
                 $this->repository->delete('tag', array('id_creation' => $params['id']));
                 $this->repository->delete('creation', array('id' => $params['id']));
@@ -213,7 +213,7 @@ namespace Controllers {
         {
             if (isset($params['id']) && $params['id'] != "") {
                 $document = $this->repository->getAllRecords('document', '*', ' AND id="' . $params['id'] . '"')[0];
-                unlink(Config::$UPLOADFOLDER . $document["name"]);
+                unlink(Config::getInstance()->UPLOADFOLDER . $document["name"]);
 
                 $this->repository->delete('document', array('id' => $params['id']));
                 $_SESSION['success'] = 'Document supprimé';

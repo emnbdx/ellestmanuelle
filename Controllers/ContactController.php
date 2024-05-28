@@ -43,10 +43,10 @@ namespace Controllers
                 //Server settings
                 $mail->SMTPDebug = SMTP::DEBUG_OFF;
                 $mail->isSMTP();
-                $mail->Host       = Config::$MAIL_HOST;
+                $mail->Host       = Config::getInstance()->MAIL_HOST;
                 $mail->SMTPAuth   = true;
-                $mail->Username   = Config::$MAIL_LOGIN;
-                $mail->Password   = Config::$MAIL_PASSWORD;
+                $mail->Username   = Config::getInstance()->MAIL_LOGIN;
+                $mail->Password   = Config::getInstance()->MAIL_PASSWORD;
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mail->Port       = 465;
 
@@ -55,7 +55,7 @@ namespace Controllers
 
                 //Recipients
                 $mail->setFrom($email);
-                $mail->addAddress(Config::$MAIL_LOGIN);
+                $mail->addAddress(Config::getInstance()->MAIL_LOGIN);
                 
                 // Content
                 $mail->isHTML(true);
