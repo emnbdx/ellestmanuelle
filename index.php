@@ -24,7 +24,6 @@
 	$router = new AltoRouter();
 
 	$repository = new Repositories\Repository();
-	$contactController = new Controllers\ContactController();
 	$creationController = new Controllers\CreationController($repository);
 	$staticController = new Controllers\StaticController($repository);
 
@@ -39,8 +38,6 @@
     $router->map('GET', '/illustrations', 'StaticController#illustrations');
     $router->map('GET', '/qui-suis-je', 'StaticController#whoami');
     $router->map('GET', '/boutique', 'StaticController#shop');
-    $router->map('GET', '/contact', 'ContactController#index');
-    $router->map('POST', '/contact', 'ContactController#send');
 	$router->map('GET', '/creations-personnelles', 'CreationController#index');
 
 	// bo route
@@ -87,8 +84,6 @@
         $bo = false;
 		if($controller == "StaticController") {
 			$ctrl = $staticController;
-		} else if ($controller == "ContactController") {
-			$ctrl = $contactController;
 		} else if ($controller == "CreationController") {
 			$ctrl = $creationController;
 		} else if ($controller == "AdminController") {
